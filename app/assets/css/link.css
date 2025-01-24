@@ -1,0 +1,73 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+	position: relative;
+}
+
+b[content='→'] {
+	position: absolute;
+	right: 2rem;
+	transform: scale(1.5, 2.5) translate(0, -27%);
+	-webkit-transform: scale(1.5, 2.5) translate(0, -27%);
+	-moz-transform: scale(1.5, 2.5) translate(0, -27%);
+	-ms-transform: scale(1.5, 2.5) translate(0, -27%);
+	-o-transform: scale(1.5, 2.5) translate(0, -27%);
+}
+
+.interactive-button:has(.arrow-text):hover > .arrow-text {
+	animation: jump-right 6s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+	-webkit-animation: jump-right 6s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a {
+	color: var(--color0);
+}
+
+a.router-link-active:not(.not-to-show-active),
+a.link:hover,
+a.link:focus {
+	box-shadow: inset -0.5rem -0.5rem 1rem 0.5rem var(--color50);
+	border-radius: 10vmin;
+	-webkit-border-radius: 10vmin;
+	-moz-border-radius: 10vmin;
+	-ms-border-radius: 10vmin;
+	-o-border-radius: 10vmin;
+	text-shadow: 0 0 0.125rem var(--color0);
+}
+
+a.router-link-active:not(.not-to-show-active)::after,
+a.link:hover::after,
+a.link:focus::after {
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0.5rem 0.5rem 1rem 0.5rem var(--bg50);
+	border-radius: 10vmin;
+	-webkit-border-radius: 10vmin;
+	-moz-border-radius: 10vmin;
+	-ms-border-radius: 10vmin;
+	-o-border-radius: 10vmin;
+}
+
+a.link:active::after {
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset -0.5rem -0.5rem 1rem 0.5rem var(--bg50);
+	border-radius: 10vmin;
+	-webkit-border-radius: 10vmin;
+	-moz-border-radius: 10vmin;
+	-ms-border-radius: 10vmin;
+	-o-border-radius: 10vmin;
+	color: var(--bg0);
+}

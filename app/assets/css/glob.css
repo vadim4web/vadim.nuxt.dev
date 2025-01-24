@@ -1,0 +1,266 @@
+:root {
+	font-size: 1.42857vmin;
+}
+
+* {
+	font-family: 'Victor Mono', serif;
+	font-optical-sizing: auto;
+	line-height: normal;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	-moz-overflow-scrolling: touch;
+
+	transition:
+		background-color var(--tr-dur),
+		border var(--tr-dur),
+		border-color var(--tr-dur),
+		border-radius var(--tr-dur),
+		box-shadow var(--tr-dur),
+		opacity var(--tr-dur),
+		transform var(--tr-dur),
+		width var(--tr-dur),
+		height var(--tr-dur),
+		max-width var(--tr-dur),
+		max-height var(--tr-dur),
+		min-width var(--tr-dur),
+		min-height var(--tr-dur),
+		margin var(--tr-dur),
+		padding var(--tr-dur),
+		left var(--tr-dur),
+		right var(--tr-dur),
+		top var(--tr-dur),
+		bottom var(--tr-dur),
+		z-index var(--tr-dur),
+		filter var(--tr-dur),
+		-webkit-filter var(--tr-dur),
+		visibility var(--tr-dur),
+		white-space var(--tr-dur),
+		line-height var(--tr-dur),
+		font-size var(--tr-dur),
+		transform-origin var(--tr-dur),
+		clip-path var(--tr-dur),
+		object-fit var(--tr-dur),
+		cursor var(--tr-dur),
+		transition-delay var(--tr-dur),
+		transition-timing-function var(--tr-dur);
+
+	-moz-transition:
+		background-color var(--tr-dur),
+		border var(--tr-dur),
+		border-color var(--tr-dur),
+		border-radius var(--tr-dur),
+		box-shadow var(--tr-dur),
+		opacity var(--tr-dur),
+		transform var(--tr-dur),
+		width var(--tr-dur),
+		height var(--tr-dur),
+		max-width var(--tr-dur),
+		max-height var(--tr-dur),
+		min-width var(--tr-dur),
+		min-height var(--tr-dur),
+		margin var(--tr-dur),
+		padding var(--tr-dur),
+		left var(--tr-dur),
+		right var(--tr-dur),
+		top var(--tr-dur),
+		bottom var(--tr-dur),
+		z-index var(--tr-dur),
+		filter var(--tr-dur),
+		-moz-filter var(--tr-dur),
+		visibility var(--tr-dur),
+		white-space var(--tr-dur),
+		line-height var(--tr-dur),
+		font-size var(--tr-dur),
+		transform-origin var(--tr-dur),
+		clip-path var(--tr-dur),
+		object-fit var(--tr-dur),
+		cursor var(--tr-dur),
+		transition-delay var(--tr-dur),
+		transition-timing-function var(--tr-dur);
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb);
+	border-radius: 0.25rem;
+	-webkit-border-radius: 0.25rem;
+	-moz-border-radius: 0.25rem;
+	-ms-border-radius: 0.25rem;
+	-o-border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--scrollbar-thumb_hover);
+}
+
+::-webkit-scrollbar-track:hover {
+	background-color: var(--scrollbar-track_hover);
+}
+
+::selection {
+	background: var(--accent50);
+	color: #fff;
+}
+
+::-moz-selection {
+	background: var(--accent50);
+	color: #fff;
+}
+
+::-webkit-selection {
+	background: var(--accent50);
+	color: #fff;
+}
+
+::before,
+::after {
+	position: absolute;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body,
+#logoOverlay {
+	padding: 0;
+	margin: 0;
+	background: var(--bg0);
+}
+
+#logoOverlay {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+body::before,
+body::after,
+#logoOverlay::before,
+#logoOverlay::after {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-image: url('https://vadim4web.github.io/logo.png');
+	background-repeat: repeat;
+	background-position: center;
+	opacity: 0.05;
+	pointer-events: none;
+}
+
+body::before,
+body::after {
+	min-height: 100%;
+}
+
+body::before {
+	background-attachment: fixed;
+}
+
+body::after {
+	background-attachment: scroll;
+}
+
+body::before {
+	z-index: -2;
+}
+
+body::after {
+	z-index: -1;
+}
+
+body::before,
+#logoOverlay::before {
+	background-size: 50vmin;
+}
+
+body::after,
+#logoOverlay::after {
+	background-size: calc(100vmin / 7);
+}
+
+#__nuxt {
+	width: 100%;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-size: 1rem;
+	padding: 0 calc(10vw - 0.25rem) 0 10vw;
+	color: var(--color0);
+	position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+menu,
+ul,
+ol,
+li,
+label,
+span:not(.logo, #spot) {
+	margin: 0;
+	padding: 0;
+	cursor: text;
+}
+
+strong,
+em {
+	line-height: 100%;
+}
+
+b {
+	text-shadow: 0 0 1px var(--color0);
+}
+
+menu,
+ul,
+ol {
+	list-style: none;
+}
+
+button {
+	position: relative;
+	cursor: pointer;
+}
+
+button,
+button:hover,
+button:active {
+	border: none;
+}
+
+main {
+	position: relative;
+	padding-top: 7.5vmin;
+	min-height: 100vmin;
+}
+
+section {
+	position: relative;
+	height: 100vmin;
+}

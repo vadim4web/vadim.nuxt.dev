@@ -1,0 +1,60 @@
+.dark-mode {
+	--is-dark: 1;
+
+	--bg0: #131313;
+	--bg50: #13131380;
+	--bg25: #13131320;
+	--bg2: #1a1a1a;
+	--color-op: #000000;
+	--color0: #ffffff;
+	--color50: #ffffff80;
+	--color2: #a8a8a8;
+	--accent0: #ffd800;
+	--accent50: #ffd80080;
+	--accent25: #ffd80040;
+	--accent1_50: #0056b980;
+	--accent2: #ffe16b;
+	--scrollbar-thumb: #363636;
+	--scrollbar-track: #5a5a5a;
+	--scrollbar-thumb_hover: #151515;
+	--scrollbar-track_hover: #6a6a6a;
+
+	--mix-blend-mode1: lighten;
+	--mix-blend-mode2: color-dodge;
+
+	--filter0: sepia(0);
+	--filter1: sepia(1) brightness(0.9);
+}
+
+.light-mode {
+	--is-dark: 0;
+
+	--bg0: #ececec;
+	--bg50: #ececec80;
+	--bg25: #ececec20;
+	--bg2: #dbdbdb;
+	--color-op: #ffffff;
+	--color0: #000000;
+	--color50: #00000080;
+	--color2: #575757;
+	--accent0: #0056b9;
+	--accent50: #0056b980;
+	--accent25: #0056b940;
+	--accent1_50: #ffd80080;
+	--accent2: #6bb5ff;
+	--scrollbar-thumb: #919191;
+	--scrollbar-track: #f2f2f2;
+	--scrollbar-thumb_hover: #2d2d2d;
+	--scrollbar-track_hover: #e2e2e2;
+
+	--mix-blend-mode1: hard-light;
+	--mix-blend-mode2: color-burn;
+
+	--filter0: grayscale(0);
+	--filter1: grayscale(1) brightness(1.2);
+}
+
+:root {
+	--tr-dur: 500ms;
+	--gray: #808080;
+}
