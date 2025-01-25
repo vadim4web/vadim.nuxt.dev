@@ -52,7 +52,7 @@ useHead({
     { property: 'og:title', content: 'VADIM4WEB – Розробка цифрових рішень' },
     { property: 'og:description', content: 'Цифрові рішення, які піднімають ваш бізнес на новий рівень.' },
     { property: 'og:image', content: '/logo.png' },
-    { property: 'og:url', content: 'https://vadim4web.fwh.is' },
+    { property: 'og:url', content: 'https://vadim4web.nuxt.dev' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'VADIM4WEB – Розробка цифрових рішень' },
@@ -65,7 +65,7 @@ useHead({
   link: [
     // { rel: 'manifest', href: '/manifest.json' },
     { rel: 'icon', id: 'favicon', href: themeIcon, type: 'image/svg+xml' },
-    { rel: 'canonical', href: 'https://vadim4web.fwh.is' },
+    { rel: 'canonical', href: 'https://vadim4web.nuxt.dev' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
     {
@@ -93,7 +93,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         'name': 'VADIM4WEB',
-        'url': 'https://vadim4web.fwh.is',
+        'url': 'https://vadim4web.nuxt.dev',
         'description': 'Цифрові рішення для сучасного бізнесу. Досконалість у кожній деталі.',
         'image': '/logo.png',
         'sameAs': [

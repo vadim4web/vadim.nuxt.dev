@@ -33,7 +33,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-30',
 
   // https://hub.nuxt.com/docs/getting-started/installation#options
-  hub: {},
+  hub: {
+    blob: true,
+    cache: true,
+  },
   dayjs: {
     plugins: ['duration'],
   },

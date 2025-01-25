@@ -187,7 +187,6 @@ const submitForm = async () => {
 
   &:focus {
     outline: none;
-    border: none none auto none;
   }
 
   input {
