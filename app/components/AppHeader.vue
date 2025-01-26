@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <header class="header w100 back-blur05">
+  <header class="header back-blur05">
     <nav>
       <menu class="w100 rel">
         <li class="menu-item w100 flex-center text-center">

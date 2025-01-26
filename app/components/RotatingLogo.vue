@@ -54,9 +54,9 @@ function preloadEnvironmentMaps() {
 function initializeScene() {
   scene = new Scene()
   camera = new PerspectiveCamera(76.5, 1, 1.5, 1000)
-  camera.position.set(0, 0, 5)
+  camera.position.set(0, 0, 3.5)
   renderer = new WebGLRenderer({ antialias: true, alpha: true })
-  renderer.setPixelRatio(window.devicePixelRatio)
+  // renderer.setPixelRatio(window.devicePixelRatio)
   renderer.autoClear = false
   renderer.shadowMap.enabled = false
   renderer.physicallyCorrectLights = false
@@ -95,7 +95,7 @@ async function loadModel() {
 
 function setRendererSize() {
   let vmin
-  if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1.5
+  if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1
   else vmin = size
   renderer.setSize(vmin, vmin)
   camera.aspect = 1
@@ -159,5 +159,5 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="canvasContainer" class="abs" :style="canvasStyle" />
+  <div ref="canvasContainer" class="abs" style="left: -10vw;" :style="canvasStyle" />
 </template>

@@ -2,7 +2,7 @@
 
 <template>
   <main class="home">
-    <section class="head content flex-col-center text-center">
+    <section class="head w100 content flex-col-center text-center">
       <div class="h1">
         <h2
           class="h1_h2"
@@ -189,7 +189,7 @@
 
   .h2 .text-highlight {
     top: -10rem;
-    right: -12rem;
+    right: -5rem;
   }
 }
 </style>
