@@ -1,0 +1,41 @@
+name: Update Pie Chart
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0'  # кожну неділю о 00:00 UTC
+
+jobs:
+  update-pie-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests matplotlib
+
+      - name: Run Python script
+        run: |
+          python pie_generate_chart.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # передаємо секрет в змінну оточення
+
+      - name: Commit and push updated chart
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add pie_languages_chart.svg
+          git commit -m "Update pie chart"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # автоматичний доступ для пушу
