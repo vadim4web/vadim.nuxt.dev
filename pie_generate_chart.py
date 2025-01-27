@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 
 # Витягуємо токен з оточення (GitHub Secrets)
 USERNAME = "vadim4web"
-TOKEN = os.getenv('MY_GITHUB_TOKEN')  # Читаємо токен з оточення
-
+TOKEN = os.getenv('MY_GITHUB_TOKEN')
 def load_colors_from_json(filename="pie_language_colors.json"):
     try:
         with open(filename, 'r') as json_file:
@@ -20,13 +19,31 @@ def fetch_repos(username, token):
     url = f"https://api.github.com/users/{username}/repos"
     headers = {"Authorization": f"token {token}"}
     response = requests.get(url, headers=headers)
+    
+    # Перевірка на успішність запиту
+    if response.status_code != 200:
+        print(f"Помилка при отриманні репозиторіїв: {response.status_code}")
+        return []
+    
     repos = response.json()
+    
+    # Перевірка структури відповіді
+    if not isinstance(repos, list):
+        print("Очікувана структура даних не отримана: не список.")
+        return []
+    
     return repos
 
 def fetch_languages(repo_name, username, token):
     url = f"https://api.github.com/repos/{username}/{repo_name}/languages"
     headers = {"Authorization": f"token {token}"}
     response = requests.get(url, headers=headers)
+    
+    # Перевірка на успішність запиту
+    if response.status_code != 200:
+        print(f"Помилка при отриманні мов для репозиторію {repo_name}: {response.status_code}")
+        return {}
+    
     languages = response.json()
     return languages
 
@@ -47,15 +64,18 @@ def main():
     language_totals = {}
 
     for repo in repos:
-        languages = fetch_languages(repo["name"], USERNAME, TOKEN)
-        for lang, count in languages.items():
-            try:
-                count = int(count)
-            except ValueError:
-                print(f"Пропущено мову {lang} через невірне значення: {count}")
-                continue
-            language_totals[lang] = language_totals.get(lang, 0) + count
-
+        if isinstance(repo, dict):  # Перевірка, що repo є словником
+            languages = fetch_languages(repo["name"], USERNAME, TOKEN)
+            for lang, count in languages.items():
+                try:
+                    count = int(count)
+                except ValueError:
+                    print(f"Пропущено мову {lang} через невірне значення: {count}")
+                    continue
+                language_totals[lang] = language_totals.get(lang, 0) + count
+        else:
+            print(f"Репозиторій {repo} не є словником, пропускаємо.")
+    
     print(json.dumps(language_totals, indent=4))
     generate_pie_chart(language_totals, language_colors)
 
