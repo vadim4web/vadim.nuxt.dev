@@ -4,11 +4,11 @@ import json
 import subprocess
 import matplotlib.pyplot as plt
 from datetime import datetime
-
+# from dotenv import load_dotenv
+# load_dotenv()
 # Витягуємо токен з оточення (GitHub Secrets)
 USERNAME = "vadim4web"
 TOKEN = os.getenv('MY_GITHUB_TOKEN')
-
 def load_colors_from_json(filename="pie_language_colors.json"):
     try:
         with open(filename, 'r') as json_file:
@@ -54,17 +54,22 @@ def generate_pie_chart(data, colors, output_file="pie_languages_chart.svg"):
     sizes = list(data.values())
     color_list = [colors.get(lang, "#d3d3d3") for lang in data.keys()]
     
-    plt.figure(figsize=(12, 6))  # Встановлюємо розмір 2x1
+    plt.figure(figsize=(12, 6))  # Set figure size
     plt.pie(sizes, labels=labels, colors=color_list, startangle=180)
-    plt.axis('equal')  # Зробити діаграму круглою
+    plt.axis('equal')  # Make the pie chart circular
     
-    # Додаємо титул з поточною датою та часом
-    last_update = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")  # Поточний час в UTC
-    title = f"STACK-CHART\nAutomatically updated at: {last_update}"
-    plt.text(-1.0, 1.1, title, ha='center', va='center', fontsize=14, fontweight='bold', color="black")
+    # Add title
+    title = "STACK-CHART"
+    plt.figtext(0.5, 0.99, title, ha="center", fontsize=32, fontweight="bold", color="black")
     
-    plt.savefig(output_file, format='svg')
-    print(f"SVG графік збережено в {output_file}")
+    # Add update text at the bottom center
+    last_update = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")  # Current time in UTC
+    updated = f"Automatically updated at: {last_update}"
+    plt.figtext(0.5, 0.93, updated, ha="center", fontsize=16, color="gray")
+    
+    # Save the pie chart
+    plt.savefig(output_file, format='svg', bbox_inches='tight')
+    print(f"SVG chart saved to {output_file}")
 
 def main():
     subprocess.run(['python', 'pie_fetch_github_colors.py'])
