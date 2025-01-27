@@ -74,26 +74,38 @@ def generate_pie_chart(data, colors, output_file="pie_languages_chart.svg"):
     print(f"SVG chart saved to {output_file}")
 
 def main():
+    # Check if the token is available
+    if not TOKEN:
+        raise EnvironmentError("Error: GitHub token (MY_GITHUB_TOKEN) is missing.")
+
     subprocess.run(['python', 'pie_fetch_github_colors.py'])
     language_colors = load_colors_from_json()
     repos = fetch_repos(USERNAME, TOKEN)
+
+    if not repos:
+        raise ValueError("No repositories fetched. Check the GitHub token or user.")
+
     language_totals = {}
 
     for repo in repos:
-        if isinstance(repo, dict):  # Перевірка, що repo є словником
+        if isinstance(repo, dict):
             languages = fetch_languages(repo["name"], USERNAME, TOKEN)
             for lang, count in languages.items():
                 try:
                     count = int(count)
                 except ValueError:
-                    print(f"Пропущено мову {lang} через невірне значення: {count}")
+                    print(f"Skipping invalid language count for {lang}: {count}")
                     continue
                 language_totals[lang] = language_totals.get(lang, 0) + count
         else:
-            print(f"Репозиторій {repo} не є словником, пропускаємо.")
-    
+            print(f"Skipping non-dictionary repo: {repo}")
+
+    if not language_totals:
+        raise ValueError("No language data aggregated. Check repositories or permissions.")
+
     print(json.dumps(language_totals, indent=4))
     generate_pie_chart(language_totals, language_colors)
+
 
 if __name__ == "__main__":
     main()

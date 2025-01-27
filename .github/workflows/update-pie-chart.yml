@@ -5,11 +5,12 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0'  # кожну неділю о 00:00 UTC
+    - cron: '0 0 * * 0'  # Кожну неділю о 00:00 UTC
 
 jobs:
   update-pie-chart:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -26,29 +27,36 @@ jobs:
 
       - name: Debug Python Environment
         run: |
+          echo "Installed Python Packages:"
           python -m pip list
-          python -c "import matplotlib; print('Matplotlib backend:', matplotlib.get_backend())"
+          echo "Matplotlib Backend Test:"
+          python -c "import matplotlib; print('Backend:', matplotlib.get_backend())"
 
-      - name: Install Additional Dependencies
-        run: sudo apt-get install -y libcairo2-dev
+      - name: Install Cairo for Matplotlib (if required)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev
 
-      - name: Run Python script
+      - name: Generate Pie Chart
         run: |
           python -c "import matplotlib; matplotlib.use('Agg')"
           python pie_generate_chart.py
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # передаємо секрет в змінну оточення
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
-      - name: Verify Chart File
+      - name: Verify Generated Files
         run: |
-          if [ -f "pie_languages_chart.svg" ]; then echo "Chart file generated successfully."; else echo "Chart file not found."; exit 1; fi
+          if [ ! -f "pie_languages_chart.svg" ]; then 
+            echo "Error: pie_languages_chart.svg not generated."; 
+            exit 1; 
+          fi
 
-      - name: Commit and push updated color file and chart
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add pie_languages_chart.svg pie_language_colors.json  # Додаємо оновлений файл кольорів
-          git commit -m "Update pie chart and color file"
+          git add pie_languages_chart.svg pie_language_colors.json
+          git diff --cached --quiet || git commit -m "Update pie chart and color file"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # автоматичний доступ для пушу
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
