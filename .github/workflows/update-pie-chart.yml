@@ -22,7 +22,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests matplotlib
+          pip install -r requirements.txt  # використовуємо requirements.txt для установки залежностей
+
+      - name: Fetch and update colors
+        run: |
+          python pie_fetch_github_colors.py  # оновлення кольорів
 
       - name: Run Python script
         run: |
@@ -30,12 +34,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # передаємо секрет в змінну оточення
 
-      - name: Commit and push updated chart
+      - name: Commit and push updated color file and chart
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add pie_languages_chart.svg
-          git commit -m "Update pie chart"
+          git add pie_languages_chart.svg pie_language_colors.json  # Додаємо оновлений файл кольорів
+          git commit -m "Update pie chart and color file"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # автоматичний доступ для пушу
