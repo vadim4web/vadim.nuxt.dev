@@ -3,10 +3,12 @@ import requests
 import json
 import subprocess
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 # Витягуємо токен з оточення (GitHub Secrets)
 USERNAME = "vadim4web"
 TOKEN = os.getenv('MY_GITHUB_TOKEN')
+
 def load_colors_from_json(filename="pie_language_colors.json"):
     try:
         with open(filename, 'r') as json_file:
@@ -51,9 +53,16 @@ def generate_pie_chart(data, colors, output_file="pie_languages_chart.svg"):
     labels = [f"{lang} ({(count / sum(data.values())) * 100:.1f}%)" for lang, count in data.items()]
     sizes = list(data.values())
     color_list = [colors.get(lang, "#d3d3d3") for lang in data.keys()]
+    
     plt.figure(figsize=(12, 6))  # Встановлюємо розмір 2x1
     plt.pie(sizes, labels=labels, colors=color_list, startangle=180)
     plt.axis('equal')  # Зробити діаграму круглою
+    
+    # Додаємо титул з поточною датою та часом
+    last_update = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")  # Поточний час в UTC
+    title = f"STACK-CHART\nAutomatically updated at: {last_update}"
+    plt.text(-1.0, 1.1, title, ha='center', va='center', fontsize=14, fontweight='bold', color="black")
+    
     plt.savefig(output_file, format='svg')
     print(f"SVG графік збережено в {output_file}")
 
