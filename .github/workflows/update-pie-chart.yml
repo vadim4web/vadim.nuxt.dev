@@ -30,6 +30,7 @@ jobs:
 
       - name: Run Python script
         run: |
+          python -c "import matplotlib; matplotlib.use('Agg')"
           python pie_generate_chart.py
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # передаємо секрет в змінну оточення

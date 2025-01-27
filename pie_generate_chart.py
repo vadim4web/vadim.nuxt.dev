@@ -2,6 +2,8 @@ import os
 import requests
 import json
 import subprocess
+# import matplotlib
+# matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from datetime import datetime
 # from dotenv import load_dotenv
