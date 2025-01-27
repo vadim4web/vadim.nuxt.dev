@@ -42,4 +42,4 @@ jobs:
           git commit -m "Update pie chart and color file"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # автоматичний доступ для пушу
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # автоматичний доступ для пушу
