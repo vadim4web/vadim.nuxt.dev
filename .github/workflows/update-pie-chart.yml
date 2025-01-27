@@ -29,15 +29,8 @@ jobs:
           python -m pip list
           python -c "import matplotlib; print('Matplotlib backend:', matplotlib.get_backend())"
 
-      - name: Test Chart Rendering
-        run: |
-          python -c "
-          import matplotlib
-          matplotlib.use('Agg')
-          import matplotlib.pyplot as plt
-          plt.plot([1, 2, 3], [4, 5, 6])
-          plt.savefig('test_chart.svg')
-          print('Test chart saved.')"
+      - name: Install Additional Dependencies
+        run: sudo apt-get install -y libcairo2-dev
 
       - name: Run Python script
         run: |
