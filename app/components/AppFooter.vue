@@ -164,7 +164,7 @@
     </div>
 
     <h5 class="h4 hr-above text-center w100">
-      &copy; 2021-{{ new Date().getFullYear() }}
+      &copy; 2020-{{ new Date().getFullYear() }}
       <NuxtLink
         to="https://github.com/vadim4web"
         rel="noopener noreferrer"
