@@ -1,4 +1,4 @@
-<script></script>
+<script setup></script>
 
 <template>
   <footer class="footer flex-align flex-col rel">
@@ -50,6 +50,7 @@
               to="https://github.com/vadim4web"
               rel="noopener noreferrer"
               target="_blank"
+              :area-label="$t('gitHub')"
               :title="$t('gitHub')"
             >
               <svg
@@ -79,8 +80,6 @@
                   stroke-linejoin="round"
                 />
               </svg>
-
-              &nbsp;
             </NuxtLink>
           </h5>
 
@@ -89,6 +88,7 @@
               to="https://x.com/vadim4web"
               rel="noopener noreferrer"
               target="_blank"
+              :area-label="$t('xtwitter')"
               :title="$t('xtwitter')"
             >
               <svg
@@ -125,8 +125,6 @@
                   />
                 </g>
               </svg>
-
-              &nbsp;
             </NuxtLink>
           </h5>
 
@@ -135,6 +133,7 @@
               to="https://t.me/vadim4web"
               rel="noopener noreferrer"
               target="_blank"
+              :aria-label="$t('chatMe')"
               :title="$t('chatMe')"
             >
               <svg
@@ -158,8 +157,6 @@
                   stroke-linejoin="round"
                 />
               </svg>
-
-              &nbsp;
             </NuxtLink>
           </h5>
         </div>
@@ -174,8 +171,7 @@
         target="_blank"
         :title="$t('gitHub')"
       >
-        VADIM4WEB.
-      </NuxtLink>
+        VADIM4WEB</NuxtLink>.
       <em> {{ $t('copyright') }}. </em>
     </h5>
   </footer>

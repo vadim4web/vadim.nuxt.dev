@@ -11,7 +11,7 @@ const themeIcon = ref(() => colorMode.value === 'dark' ? '/favicon_dark.svg' : '
 const { y } = useWindowScroll()
 const scrollUp = () => y.value = 0
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((_to, _from, next) => {
   setShowLoader(true)
   next()
 })
@@ -63,7 +63,7 @@ useHead({
     { name: 'theme-color', content: '#ffffff' },
   ],
   link: [
-    // { rel: 'manifest', href: '/manifest.json' },
+    { rel: 'manifest', href: '/manifest.json' },
     { rel: 'icon', id: 'favicon', href: themeIcon, type: 'image/svg+xml' },
     { rel: 'canonical', href: 'https://vadim4web.nuxt.dev' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

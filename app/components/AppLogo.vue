@@ -2,7 +2,7 @@
 const { fontWeight } = defineProps({ fontWeight: String })
 
 const strokeWidth = computed(() =>
-  fontWeight === 'bold' ? 'max(0.9vmin, 9px)' : 'max(0.6vmin, 6px)',
+  fontWeight === 'bold' ? 'max(0.9vmin, 9px)' : 'max(0.7vmin, 7px)',
 )
 </script>
 

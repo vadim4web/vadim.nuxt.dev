@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "vadim4web.nuxt.dev",
   "private": true,
   "type": "module",
   "scripts": {
@@ -32,6 +32,5 @@
     "typescript": "^5.7.3",
     "vue-tsc": "^2.2.0",
     "wrangler": "^3.101.0"
-  },
-  "packageManager": "pnpm@9.15.3"
+  }
 }

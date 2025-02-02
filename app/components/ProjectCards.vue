@@ -1,3 +1,13 @@
+<script setup>
+import { projects } from '~/assets/data/projects'
+
+const three = getThreeRandom(projects)
+const isLargeScreen = useMediaQuery('(min-width: 1024px)')
+const isPortrait = useMediaQuery('(orientation: portrait)')
+const zoom = computed(() => (isLargeScreen && isPortrait ? '0.3' : '0.175'))
+const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
+</script>
+
 <template>
   <div class="three three-projects flex-center w100">
     <div
@@ -47,16 +57,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { projects } from '~/assets/data/projects'
-
-const three = getThreeRandom(projects)
-const isLargeScreen = useMediaQuery('(min-width: 1024px)')
-const isPortrait = useMediaQuery('(orientation: portrait)')
-const zoom = computed(() => (isLargeScreen && isPortrait ? '0.3' : '0.175'))
-const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
-</script>
 
 <style lang="scss">
 .text-wrap {

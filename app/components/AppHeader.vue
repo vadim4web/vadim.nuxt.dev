@@ -1,4 +1,4 @@
-<script></script>
+<script setup></script>
 
 <template>
   <header class="header back-blur05">
