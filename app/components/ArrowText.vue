@@ -1,7 +1,5 @@
 <script setup>
-defineProps({
-  height: String,
-})
+defineProps({ height: { type: String, required: true } })
 </script>
 
 <template>

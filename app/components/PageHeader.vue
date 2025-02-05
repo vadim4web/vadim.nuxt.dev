@@ -1,13 +1,7 @@
 <script setup>
 defineProps({
-  headKey: {
-    type: String,
-    required: true,
-  },
-  textKey: {
-    type: String,
-    required: true,
-  },
+  headKey: { type: String, required: true },
+  textKey: { type: String, required: true },
 })
 </script>
 

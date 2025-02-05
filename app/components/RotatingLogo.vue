@@ -20,19 +20,6 @@ const canvasContainer = ref(null)
 const environmentMaps = {}
 const clock = new Clock()
 
-const { noRotate, noShadow, size } = defineProps({
-  noRotate: Boolean,
-  noShadow: Boolean,
-  size: Number,
-})
-
-const canvasStyle = computed(() =>
-  !noShadow
-    ? `filter: drop-shadow(0 0 1rem var(--accent0));
-      -webkit-filter: drop-shadow(0 0 1rem var(--accent0));`
-    : '',
-)
-
 function getCurrentTheme() {
   return getComputedStyle(document.documentElement)
     .getPropertyValue('--is-dark')
@@ -94,10 +81,8 @@ async function loadModel() {
 }
 
 function setRendererSize() {
-  let vmin
-  if (!size) vmin = Math.min(window.innerWidth, window.innerHeight) * 1
-  else vmin = size
-  renderer.setSize(vmin, vmin)
+  const size = Math.min(window.innerWidth, window.innerHeight) * 1
+  renderer.setSize(size, size)
   camera.aspect = 1
   camera.updateProjectionMatrix()
 }
@@ -132,7 +117,7 @@ function animate() {
   const delta = clock.getDelta()
   if (model) {
     model.rotation.x = Math.PI / 2
-    if (!noRotate) model.rotation.z += delta * 0.5
+    model.rotation.z += delta * 0.5
   }
   renderer.clear()
   renderer.render(scene, camera)
@@ -159,5 +144,10 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="canvasContainer" class="abs w100 flex-center" :style="canvasStyle" />
+  <div
+    ref="canvasContainer"
+    class="abs w100 flex-center"
+    style="filter: drop-shadow(0 0 1rem var(--accent0));
+      -webkit-filter: drop-shadow(0 0 1rem var(--accent0));"
+  />
 </template>

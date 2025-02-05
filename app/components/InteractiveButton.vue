@@ -1,27 +1,23 @@
 <script setup>
 const { path, action, fontSize, padding, borderRadius, bg } = defineProps({
-  path: String,
-  action: Function,
-  fontSize: String,
-  padding: String,
-  borderRadius: String,
-  bg: String,
+  path: { type: String, required: false },
+  action: { type: Function, required: false },
+  fontSize: { type: String, required: true },
+  padding: { type: String, required: true },
+  borderRadius: { type: String, required: true },
+  bg: { type: String, required: true },
 })
 
+const isLink = !!path
 const target = ref(null)
-const isRouterLink = !!path
 const { elementX, elementY, isOutside } = useMouseInElement(target)
 
-const handleClick = () => {
-  if (action) {
-    action()
-  }
-}
+const handleClick = () => action?.()
 </script>
 
 <template>
   <NuxtLink
-    v-if="isRouterLink"
+    v-if="isLink"
     ref="target"
     class="interactive-button flex-center hideO rel"
     :style="{

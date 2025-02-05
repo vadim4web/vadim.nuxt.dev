@@ -1,8 +1,8 @@
 <script setup>
-const { fontWeight } = defineProps({ fontWeight: String })
+const { fontWeight } = defineProps({ fontWeight: { type: String, required: true } })
 
 const strokeWidth = computed(() =>
-  fontWeight === 'bold' ? 'max(0.9vmin, 9px)' : 'max(0.7vmin, 7px)',
+  fontWeight === 'bold' ? '10px' : '7px',
 )
 </script>
 
@@ -24,8 +24,8 @@ const strokeWidth = computed(() =>
           dx="0"
           dy="0"
           flood-color="currentColor"
-          flood-opacity="0.75"
-          stdDeviation="2"
+          flood-opacity="0.66"
+          stdDeviation="4"
         />
       </filter>
     </defs>
@@ -33,7 +33,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="0"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       V
     </text>
@@ -41,7 +41,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="36"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       A
     </text>
@@ -49,7 +49,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="90"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       D
     </text>
@@ -57,7 +57,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="134"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       I
     </text>
@@ -65,14 +65,14 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="185"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       M
     </text>
     <g
       class="logo-image"
       transform="translate(243, 0)"
-      :style="{ strokeWidth: strokeWidth }"
+      :style="{ strokeWidth }"
       stroke="currentColor"
     >
       <line
@@ -105,7 +105,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="339"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       W
     </text>
@@ -113,7 +113,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="393"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       E
     </text>
@@ -121,7 +121,7 @@ const strokeWidth = computed(() =>
       class="logo-letter"
       x="443"
       y="90"
-      :style="{ fontWeight: fontWeight }"
+      :style="{ fontWeight }"
     >
       B
     </text>
@@ -138,7 +138,6 @@ const strokeWidth = computed(() =>
     justify-content: center;
     align-items: center;
     font-size: 100px;
-    font-weight: bold;
     fill: var(--color0);
   }
 

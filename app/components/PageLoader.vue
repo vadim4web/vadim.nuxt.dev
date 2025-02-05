@@ -3,12 +3,13 @@ import { useLoader } from '~/composables/useLoader'
 
 const { showLoader } = useLoader()
 const colorMode = useColorMode()
-const color = ref(colorMode.value === 'dark' ? '#fff' : '#000')
 
 const totalDuration = 1755
-const isVisible = ref(true)
-const fadeOutClass = ref(false)
+
 const logo2dCanvas = ref(null)
+const fadeOutClass = ref(false)
+const isVisible = ref(true)
+const color = ref(colorMode.value === 'dark' ? '#fff' : '#000')
 
 function startAnimation() {
   const canvas = logo2dCanvas.value
@@ -192,12 +193,8 @@ onMounted(() => {
 
 <style scoped>
 @keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .fadeOut {

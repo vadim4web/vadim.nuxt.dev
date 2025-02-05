@@ -1,9 +1,9 @@
 <script setup>
-const { setLocale, locale } = useI18n()
-const showOptions = ref(false)
-const selectedLanguage = ref(locale.value)
+const { locale, setLocale } = useI18n()
 const preferredLanguages = usePreferredLanguages()
 
+const showOptions = ref(false)
+const selectedLanguage = ref(locale.value)
 const availableLanguages = ref([
   { code: 'en', flag: '/flags/en.webp', name: 'English' },
   { code: 'uk', flag: '/flags/uk.webp', name: 'Українська' },
@@ -21,13 +21,9 @@ const changeLanguage = (lang) => {
   sessionStorage.setItem('lang', lang)
 }
 
-const toggleMenu = () => {
-  showOptions.value = !showOptions.value
-}
+const toggleMenu = () => showOptions.value = !showOptions.value
 
-const closeMenu = () => {
-  showOptions.value = false
-}
+const closeMenu = () => showOptions.value = false
 
 onMounted(() => {
   const userLang = preferredLanguages[0] || 'en-US'

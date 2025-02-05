@@ -1,5 +1,5 @@
 <script setup>
-import { projects } from '~/assets/data/projects.js'
+import { projects } from '~/assets/data'
 
 const route = useRoute()
 const projectName = ref(route.params.projectName)

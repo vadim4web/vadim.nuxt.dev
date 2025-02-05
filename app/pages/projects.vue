@@ -1,5 +1,5 @@
 <script setup>
-import { chunkedProjects } from '~/assets/data/projects.js'
+import { chunkedProjects } from '~/assets/data'
 
 const itemsToShow = ref(2)
 const projectsToShow = ref(chunkedProjects.slice(0, itemsToShow.value))
@@ -15,6 +15,7 @@ const handleLoadMore = () => {
   else if (chunkedProjects.length - 1 === itemsToShow.value) {
     projectsToShow.value = chunkedProjects.slice()
   }
+
   isLimitReached.value = projectsToShow.value.length === chunkedProjects.length
 }
 
@@ -22,8 +23,7 @@ const handleScroll = () => {
   const lastElementId = `three-${projectsToShow.value.length - 2}`
   const lastElement = document.getElementById(lastElementId)
 
-  if (lastElement)
-    lastElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  if (lastElement) lastElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
 onUpdated(() => handleScroll())

@@ -1,5 +1,5 @@
 <script setup>
-import { projects } from '~/assets/data/projects'
+import { projects } from '~/assets/data'
 
 const three = getThreeRandom(projects)
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')

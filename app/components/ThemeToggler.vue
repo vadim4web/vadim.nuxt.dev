@@ -1,25 +1,30 @@
 <script setup>
 import { useThemeColor } from '~/composables/useThemeColor'
 
-const preferredColor = usePreferredColorScheme()
-const { setThemeColor } = useThemeColor()
 const { x, y } = useMouse()
 const { width, height } = useWindowSize()
+const { setThemeColor } = useThemeColor()
+const preferredColor = usePreferredColorScheme()
+const colorMode = useColorMode()
+
 const offsetX = ref(50)
 const offsetY = ref(50)
-const colorMode = useColorMode()
+
 const isDark = computed({
   get() {
     return colorMode.value === 'dark'
   },
   set() {
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-    const color = colorMode.value === 'dark' ? '#000000' : '#ffffff'
+    const color = colorMode.value === 'dark' ? '#ffffff' : '#000000'
     setThemeColor(color)
   },
 })
 
-onMounted(() => preferredColor === 'dark' ? setThemeColor('#ffffff') : setThemeColor('#000000'))
+onMounted(() => {
+  if (preferredColor === 'dark') setThemeColor('#ffffff')
+  else setThemeColor('#000000')
+})
 
 onUpdated(() => {
   offsetX.value = (x.value / width.value) * 100 || 50

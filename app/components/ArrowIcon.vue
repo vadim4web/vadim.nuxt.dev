@@ -1,8 +1,11 @@
 <template>
   <svg
+    aria-label="Arrow Icon"
+    aria-hidden="false"
     fill="none"
     height="13"
     style="width: 3.125rem; height: 0.8125rem; fill: var(--color0)"
+    role="img"
     viewBox="0 0 50 13"
     width="50"
     xmlns="http://www.w3.org/2000/svg"

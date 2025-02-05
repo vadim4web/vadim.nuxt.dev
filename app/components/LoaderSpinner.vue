@@ -1,21 +1,20 @@
 <script setup>
 import { useThemeColor } from '~/composables/useThemeColor'
 
-const { themeColor } = useThemeColor()
-
 defineProps({
-  classes: Object,
-  three: Boolean,
+  classes: { type: Object, required: true },
+  three: { type: Boolean, required: true },
 })
 
-const spinnerCanvas = ref(null)
 let startTime = null
 const totalDuration = 1755
-
+const segmentMaxValues = [100, 50, 50, 180, 360]
 const segmentDurations = [0.15, 0.11, 0.08, 0.22, 0.44].map(
   percentage => totalDuration * percentage,
 )
-const segmentMaxValues = [100, 50, 50, 180, 360]
+
+const spinnerCanvas = ref(null)
+const { themeColor } = useThemeColor()
 
 const drawFunctions = [
   progress => drawLine(50, 100, 50, 100 - progress),
@@ -94,9 +93,9 @@ onMounted(async () => {
   requestAnimationFrame(animateSpinner)
   window.addEventListener('themechange', updateTheme)
 })
-onUnmounted(() => {
-  window.removeEventListener('themechange', updateTheme)
-})
+
+onUnmounted(() => window.removeEventListener('themechange', updateTheme))
+
 watch(
   () => themeColor.value,
   async (newColor) => {

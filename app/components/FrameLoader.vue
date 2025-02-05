@@ -1,14 +1,15 @@
 <script setup>
 defineProps({
-  iframeTitle: String,
-  iframeSrc: String,
-  iframeStyle: Object,
-  iframeClass: Object,
-  three: Boolean,
-  scrolling: String,
+  iframeTitle: { type: String, required: true },
+  iframeSrc: { type: String, required: true },
+  iframeStyle: { type: Object, required: true },
+  iframeClass: { type: Object, required: true },
+  three: { type: Boolean, required: true },
+  scrolling: { type: String, required: true },
 })
 
 const isLoaded = ref(false)
+
 const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 </script>
 
