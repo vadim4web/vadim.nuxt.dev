@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const isProd = process.env.NODE_ENV === 'production'
+
 export default defineNuxtConfig({
   // https://nuxt.com/modules
   modules: [
@@ -8,11 +10,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     'dayjs-nuxt',
+    '@nuxtjs/supabase',
   ],
 
   plugins: [
     '~/plugins/clickOutside.client.js',
   ],
+  ssr: isProd,
 
   // https://devtools.nuxt.com
   devtools: { enabled: true },
@@ -34,9 +38,14 @@ export default defineNuxtConfig({
 
   // https://hub.nuxt.com/docs/getting-started/installation#options
   hub: {
-    blob: true,
-    cache: true,
+    blob: isProd,
+    cache: isProd,
   },
+
+  // auth: {
+  //   baseURL: `http://localhost:3000`,
+  // },
+
   dayjs: {
     plugins: ['duration'],
   },
@@ -53,4 +62,16 @@ export default defineNuxtConfig({
   i18n: {
     vueI18n: './i18n.config.ts',
   },
+
+  supabase: {
+    // Options
+    redirectOptions: {
+      login: '/signin',
+      callback: '/confirm',
+      include: undefined,
+      exclude: [],
+      cookieRedirect: false,
+    },
+  },
+
 })

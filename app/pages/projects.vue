@@ -173,22 +173,17 @@ onUpdated(() => handleScroll())
     }
 
     .iframe {
-      @media (orientation: portrait) and (max-width: 1023px) {
+      @media (max-width: 1023px) {
         zoom: 0.175;
         border-radius: 5.714285rem;
       }
 
-      @media (orientation: portrait) and (min-width: 1024px) {
+      @media (min-width: 1024px) and (orientation: portrait) {
         zoom: 0.333;
         border-radius: 3rem;
       }
 
-      @media (orientation: landscape) and (max-width: 1023px) {
-        zoom: 0.175;
-        border-radius: 5.714285rem;
-      }
-
-      @media (orientation: landscape) and (min-width: 1024px) {
+      @media (min-width: 1024px) and (orientation: landscape) {
         zoom: 0.25;
         border-radius: 4rem;
       }

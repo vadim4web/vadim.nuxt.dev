@@ -31,14 +31,6 @@ router.afterEach(() => {
   scrollUp()
 })
 
-watch(
-  () => colorMode.value,
-  (newValue) => {
-    themeColor.value = newValue === 'dark' ? '#000000' : '#ffffff'
-    themeIcon.value = newValue === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
-  },
-)
-
 useHead({
   htmlAttrs: {
     lang: 'uk',
@@ -105,6 +97,14 @@ useHead({
     },
   ],
 })
+
+watch(
+  () => colorMode.value,
+  (newValue) => {
+    themeColor.value = newValue === 'dark' ? '#000000' : '#ffffff'
+    themeIcon.value = newValue === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
+  },
+)
 </script>
 
 <template>

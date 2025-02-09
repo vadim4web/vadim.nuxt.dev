@@ -1,9 +1,6 @@
 # VADIM4WEB Crafting Digital Solutions _Excellence in Every Detail._
-[![Portfolio](https://github.com/vadim4web/vadim4web/blob/main/gh.png)](https://vadim4web.github.io)
+[![Portfolio](https://github.com/vadim4web/vadim4web/blob/main/gh.png)](https://vadim4web.nuxt.dev)
 
-![Languages Pie Chart](pie_languages_chart.svg)
-
-[![Personal Site](https://img.shields.io/badge/Personal%20Site-4CAF50?style=flat-square&logo=google-chrome&logoColor=white)](https://vadim4web.nuxt.dev)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vadim4web)
 [![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=flat-square&logo=facebook&logoColor=white)](https://www.facebook.com/vadim4web)
 [![Telegram](https://img.shields.io/badge/Telegram-0088CC?style=flat-square&logo=telegram&logoColor=white)](https://t.me/vadim4web)
