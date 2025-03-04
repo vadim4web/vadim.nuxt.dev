@@ -20,7 +20,7 @@ const isDark = computed({
   },
 })
 
-onMounted(() => setThemeColor(colorMode.value === 'dark' ? '#ffffff' : '#000000'))
+onMounted(() => setTimeout(() => setThemeColor(colorMode.value === 'dark' ? '#ffffff' : '#000000'), 0))
 
 onUpdated(() => {
   offsetX.value = (x.value / width.value) * 100 || 50
