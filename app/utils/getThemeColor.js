@@ -1,3 +1,3 @@
-import getTheme from './getTheme.js'
+import getTheme from './getTheme'
 
 export default () => (getTheme() === 'dark' ? '#ffffff' : '#000000')

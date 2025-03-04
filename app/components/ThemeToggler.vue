@@ -16,7 +16,7 @@ const isDark = computed({
   },
   set() {
     colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-    const color = colorMode.value === 'dark' ? '#ffffff' : '#000000'
+    const color = colorMode.preference === 'dark' ? '#ffffff' : '#000000'
     setThemeColor(color)
   },
 })
