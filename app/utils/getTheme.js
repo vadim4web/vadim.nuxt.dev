@@ -5,7 +5,5 @@ export default () => {
     ? 'dark'
     : 'light'
 
-  console.log('theme', storedTheme || themeClass || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
-
   return storedTheme || themeClass || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 }

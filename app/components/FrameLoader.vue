@@ -2,9 +2,9 @@
 defineProps({
   iframeTitle: { type: String, required: true },
   iframeSrc: { type: String, required: true },
-  iframeStyle: { type: Object, required: true },
+  iframeStyle: { type: Object, required: false },
   iframeClass: { type: Object, required: true },
-  three: { type: Boolean, required: true },
+  three: { type: Boolean, required: false },
   scrolling: { type: String, required: true },
 })
 

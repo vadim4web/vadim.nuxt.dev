@@ -1,5 +1,13 @@
 export default defineI18nConfig(() => ({
   legacy: false,
+  fallbackLocale: {
+    'en-US': ['en'],
+    'en-GB': ['en'],
+    'uk-UA': ['uk'],
+    'ru-RU': ['uk'],
+    'en': ['en'],
+    'default': ['uk'],
+  },
   messages: {
     en: {
       flagAlt_en: 'The Union Jack',

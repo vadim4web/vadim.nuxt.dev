@@ -1,9 +1,9 @@
 <script setup>
 const { locale, setLocale } = useI18n()
-const preferredLanguages = usePreferredLanguages()
+// const preferredLanguages = usePreferredLanguages()
 
 const showOptions = ref(false)
-const selectedLanguage = ref(locale.value)
+const selectedLanguage = ref(locale.value.slice(0, 2))
 const availableLanguages = ref([
   { code: 'en', flag: '/flags/en.webp', name: 'English' },
   { code: 'uk', flag: '/flags/uk.webp', name: 'Українська' },
@@ -25,11 +25,14 @@ const toggleMenu = () => showOptions.value = !showOptions.value
 
 const closeMenu = () => showOptions.value = false
 
-onMounted(() => {
-  const userLang = preferredLanguages[0] || 'en-US'
-  const langToSet = userLang.includes('ru') || userLang.includes('uk') ? 'uk' : 'en'
-  setLocale(langToSet)
-})
+// onMounted(() => {
+//   const userLang = preferredLanguages.value.includes('en')
+//     ? 'en'
+//     : userLang.includes('ru') || userLang.includes('uk')
+//       ? 'uk'
+//       : 'en'
+//   setLocale(userLang)
+// })
 </script>
 
 <template>
