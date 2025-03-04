@@ -1,9 +1,11 @@
 export default () => {
-  const storedTheme = sessionStorage.getItem('theme')
+  const storedTheme = sessionStorage.getItem('nuxt-color-mode')
 
-  const isDarkClass = document.documentElement.classList.contains('dark-mode')
+  const themeClass = document.documentElement.classList.contains('dark-mode')
     ? 'dark'
     : 'light'
 
-  return storedTheme || isDarkClass || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  console.log('theme', storedTheme || themeClass || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+
+  return storedTheme || themeClass || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 }

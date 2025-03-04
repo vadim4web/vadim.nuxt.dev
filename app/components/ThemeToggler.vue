@@ -20,6 +20,8 @@ const isDark = computed({
   },
 })
 
+onMounted(() => setThemeColor(colorMode.value === 'dark' ? '#ffffff' : '#000000'))
+
 onUpdated(() => {
   offsetX.value = (x.value / width.value) * 100 || 50
   offsetY.value = (y.value / height.value) * 100 || 50

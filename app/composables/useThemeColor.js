@@ -7,7 +7,6 @@ export const useThemeColor = () => {
 
   const setThemeColor = (value) => {
     themeColor.value = value
-    sessionStorage.setItem('theme', value === '#ffffff' ? 'dark' : 'light')
   }
 
   return {
