@@ -113,3 +113,7 @@
 .hideO {
 	overflow: hidden;
 }
+
+.cursor-help {
+  cursor: help;
+}

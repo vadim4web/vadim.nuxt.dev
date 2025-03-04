@@ -35,7 +35,7 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 
       <h4 class="h4 text-left rel">
         <NuxtLink
-          class="text-wrap hideO"
+          class="text-wrap hideO cursor-help"
           :title="$t('worksDetails') + ' «' + title + '»'"
           :to="{ name: 'project-projectName', params: { projectName: name } }"
         >

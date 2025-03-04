@@ -164,7 +164,7 @@ watchEffect(() => {
       <div class="cards">
         <div v-for="(p, i) in others" :key="i" class="card card-back br1 rel">
           <NuxtLink
-            class="flex-col"
+            class="flex-col cursor-help"
             :title="$t('worksDetails') + ' «' + p.title + '»'"
             :to="{
               name: 'project-projectName',

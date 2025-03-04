@@ -64,7 +64,7 @@ onUpdated(() => handleScroll())
             </p>
 
             <NuxtLink
-              class="t2"
+              class="t2 cursor-help"
               :title="$t('worksDetails') + ' «' + p.title + '»'"
               :to="{
                 name: 'project-projectName',

@@ -287,6 +287,32 @@ const vertical = [
       'sass ^1.69.5',
     ],
   },
+  {
+    title: 'Unipark',
+    name: 'unipark-com-ua',
+    stack: ['vue', 'i18n', 'tailwindcss'],
+    tags: ['SPA', 'Vue 3', 'Landing'],
+    desc_en: 'Unipark is a modern, multi-theme, and multilingual business website built with Vue 3. Initially created on Tilda, it was later rewritten in Vue within a few days to improve performance, flexibility, and scalability.\n\nKey features:\n\n- Multi-theme support – light and dark mode\n- Multilingual – full i18n integration\n- Optimized performance – built with Vite for speed\n- TailwindCSS – modern and responsive design\n- GSAP animations – smooth and engaging user experience\n\nThis project replaces the previous Tilda-based website, offering better maintainability and customization.',
+    desc_uk: 'Unipark – це сучасний бізнес-сайт з підтримкою мультитем та багатомовності, створений на основі Vue 3. Спочатку сайт був розроблений у Tilda, але згодом переписаний на Vue всього за кілька днів для покращення продуктивності та гнучкості.\n\nОсновні можливості:\n\n- Підтримка тем – світла і темна версії\n- Багатомовність – повна інтеграція i18n\n- Оптимізована продуктивність – збірка через Vite\n- TailwindCSS – сучасний та адаптивний дизайн\n- Анімації GSAP – плавні та приємні ефекти\n\nЦей проект замінює попередню версію сайту на Tilda, забезпечуючи кращу гнучкість і налаштування.',
+    path: 'unipark-com-ua',
+    orientation: '|',
+    deps: [
+      '@emailjs/browser ^4.4.1',
+      '@vueuse/core ^12.7.0',
+      'axios ^1.7.9',
+      'gsap ^3.12.7',
+      'postcss ^8.5.3',
+      'tailwindcss ^4.0.8',
+      'vue ^3.5.13',
+      'vue-i18n ^11.1.1',
+      'vue-router ^4.5.0',
+      'vueperslides ^3.6.0',
+      'eslint ^9.21.0',
+      'prettier ^3.5.2',
+      'sass ^1.85.0',
+      'vite ^6.1.0',
+    ],
+  },
 ]
 
 const horizontal = [
@@ -562,6 +588,41 @@ const horizontal = [
     orientation: '-',
     deps: ['@vueuse/core', 'vue', 'vue-i18n', 'vue-router'],
   },
+  {
+    title: 'WebSocket Chat',
+    name: 'chat-app',
+    stack: ['nodejs', 'express', 'websocket'],
+    tags: ['Node.js', 'Chat', 'WS'],
+    desc_en: 'A simple real-time WebSocket chat application built with Node.js and Express. This project demonstrates the use of WebSockets for instant message exchange without requiring a page reload.\n\nKey features:\n\n- Real-time communication – instant message delivery\n- Lightweight – minimal dependencies\n- Express backend – efficient and easy-to-deploy\n- CORS support – allows flexible API integration\n\nThis is a minimal yet functional WebSocket chat app for learning and experimentation.',
+    desc_uk: 'Простий real-time чат на WebSocket, створений за допомогою Node.js і Express. Цей проект демонструє, як використовувати WebSockets для миттєвого обміну повідомленнями без перезавантаження сторінки.\n\nОсновні можливості:\n\n- Реальний час – миттєва доставка повідомлень\n- Легка вага – мінімум залежностей\n- Backend на Express – ефективний і простий у розгортанні\n- Підтримка CORS – можливість інтеграції API\n\nЦей чат є мінімалістичним, але функціональним, ідеально підходить для навчання та експериментів.',
+    path: 'https://chat-app-2acm.onrender.com/',
+    orientation: '-',
+    deps: [
+      'cors ^2.8.5',
+      'express ^4.21.2',
+      'ws ^8.18.0',
+    ],
+    white_bg: true,
+  },
+  {
+    title: 'GitHub Lang Stats',
+    name: 'github-lang-stats-node',
+    stack: ['nodejs', 'express', 'github-api'],
+    tags: ['API', 'GitHub', 'Node.js'],
+    desc_en: 'GitHub Lang Stats is a Node.js-based tool that generates programming language statistics for a user\'s GitHub repositories. It provides various chart types (bar, pie, donut, ring) to visualize language usage.\n\nKey features:\n\n- GitHub API integration – fetches repository language stats\n- Multiple visualization formats – bar, pie, donut, and ring charts\n- Express-powered backend – efficient API handling\n- Customizable themes – configure background and text colors\n- Automated updates – fetches latest language stats dynamically\n\nThis project is great for developers looking to display their GitHub language usage in a visual and interactive way.',
+    desc_uk: 'GitHub Lang Stats – це інструмент на Node.js, який генерує статистику використання мов програмування в репозиторіях GitHub. Він підтримує кілька типів візуалізацій, таких як стовпчасті, кругові, кільцеві та донат-діаграми.\n\nОсновні можливості:\n\n- Інтеграція з GitHub API – отримує дані про мови в репозиторіях\n- Різні формати візуалізації – стовпчасті, кругові, кільцеві та донат-діаграми\n- Backend на Express – швидке оброблення запитів\n- Налаштовувані теми – змінюйте фон і кольори тексту\n- Автоматичне оновлення – динамічне отримання останніх даних\n\nЦей проект підходить для розробників, які хочуть інтерактивно демонструвати використання мов у своїх GitHub-репозиторіях.',
+    path: 'https://github-lang-stats-node.onrender.com/',
+    orientation: '-',
+    deps: [
+      'axios ^1.7.9',
+      'cors ^2.8.5',
+      'dotenv ^16.4.7',
+      'express ^4.21.2',
+      'yaml-js ^0.3.1',
+      'nodemon ^3.1.0',
+    ],
+  },
+
 ]
 
 Array.prototype.shuffle = function () {
@@ -609,8 +670,12 @@ const projects = [
   vertical[12],
 
   vertical[13],
+  horizontal[14],
+  horizontal[15],
+
   vertical[14],
   vertical[15],
+  vertical[16],
 ]
 
 const chunkArray = (arr, chunkSize) => {

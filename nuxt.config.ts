@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     'dayjs-nuxt',
-    '@nuxtjs/supabase',
   ],
 
   plugins: [
@@ -42,10 +41,6 @@ export default defineNuxtConfig({
     cache: isProd,
   },
 
-  // auth: {
-  //   baseURL: `http://localhost:3000`,
-  // },
-
   dayjs: {
     plugins: ['duration'],
   },
@@ -62,16 +57,4 @@ export default defineNuxtConfig({
   i18n: {
     vueI18n: './i18n.config.ts',
   },
-
-  supabase: {
-    // Options
-    redirectOptions: {
-      login: '/signin',
-      callback: '/confirm',
-      include: undefined,
-      exclude: [],
-      cookieRedirect: false,
-    },
-  },
-
 })

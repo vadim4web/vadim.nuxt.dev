@@ -67,7 +67,7 @@ const slidesArray = [
     title_uk: 'Візуалізація Концепцій Складної Графіки',
     content: [
       { name: 'SVG, Canvas', path: 'svg.svg', to_invert: true },
-      { name: 'WebGL', path: 'webgl.webp', to_invert: true },
+      { name: 'GSAP', path: 'gsap.webp' },
       { name: 'Three.js', path: 'threejs.webp', to_invert: true },
     ],
   },
