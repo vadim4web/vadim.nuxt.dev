@@ -4,7 +4,6 @@ import { useThemeColor } from '~/composables/useThemeColor'
 const { x, y } = useMouse()
 const { width, height } = useWindowSize()
 const { setThemeColor } = useThemeColor()
-const preferredColor = usePreferredColorScheme()
 const colorMode = useColorMode()
 
 const offsetX = ref(50)
@@ -19,11 +18,6 @@ const isDark = computed({
     const color = colorMode.preference === 'dark' ? '#ffffff' : '#000000'
     setThemeColor(color)
   },
-})
-
-onMounted(() => {
-  if (preferredColor === 'dark') setThemeColor('#ffffff')
-  else setThemeColor('#000000')
 })
 
 onUpdated(() => {
