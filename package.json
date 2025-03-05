@@ -9,7 +9,7 @@
     "preview": "npx nuxthub preview",
     "deploy": "npx nuxthub deploy",
     "postinstall": "nuxt prepare",
-    "lint": "eslint ."
+    "lint": "eslint --fix app/**/*.{js,vue}"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
