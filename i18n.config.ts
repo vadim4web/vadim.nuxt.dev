@@ -7,10 +7,10 @@ export default defineI18nConfig(() => ({
       flagAlt_en: 'The Union Jack',
       flagAlt_uk: 'The Ukrainian flag',
 
-      AboutMe: 'about me',
-      MyWorks: 'my works',
-      MyContacts: 'my contacts',
-      MyBlog: 'my blog',
+      AboutMe: 'bio',
+      MyWorks: 'works',
+      MyContacts: 'contact',
+      MyBlog: 'blog',
       toggleTheme_system: 'Change the theme to system',
       toggleTheme_light: 'Change the theme to dark',
       toggleTheme_dark: 'Change the theme to light',
@@ -37,8 +37,8 @@ export default defineI18nConfig(() => ({
       homeB3: 'EXPLORE MORE',
       homeH23: 'Technologies I like to use and keep diving in deeper',
 
-      aboutH21: 'About Me',
-      aboutT1: 'Little Brief About Myself',
+      aboutH21: 'Bio',
+      aboutT1: 'Little Brief About Me',
       aboutH221: 'My mission',
       aboutH222: 'is to make',
       aboutH223: 'development',
@@ -106,15 +106,19 @@ export default defineI18nConfig(() => ({
       notFoundT15:
         '...It is a path not yet traveled or, perhaps, already forgotten...',
       notFoundB: 'go back',
+
+      errorT11: 'Even the machine can be mistaken.',
+      errorT12: 'Something went wrong on ',
+      errorT13: '...Maybe the system is trying to tell us something?',
     },
     uk: {
       flagAlt_en: 'Прапор Великої Британії',
       flagAlt_uk: 'Прапор України',
 
-      AboutMe: 'про мене',
-      MyWorks: 'мої роботи',
-      MyContacts: 'мої контакти',
-      MyBlog: 'мій блог',
+      AboutMe: 'біо',
+      MyWorks: 'роботи',
+      MyContacts: 'контакт',
+      MyBlog: 'блог',
       toggleTheme_system: 'Змінити тему на системну',
       toggleTheme_light: 'Змінити тему на темну',
       toggleTheme_dark: 'Змінити тему на світлу',
@@ -140,8 +144,8 @@ export default defineI18nConfig(() => ({
       homeH23:
         'Технології, які я люблю використовувати, і в котрих продовжую поглиблюватись',
 
-      aboutH21: 'Про Мене',
-      aboutT1: 'Коротко Про Мою Особистість',
+      aboutH21: 'Біо',
+      aboutT1: 'Коротко Про Мене',
       aboutH221: 'Моя місія —',
       aboutH222: 'робити',
       aboutH223: 'розробку',
@@ -209,6 +213,11 @@ export default defineI18nConfig(() => ({
       notFoundT15:
         '...Це шлях, який ще не пройдено, або, можливо, вже забуто...',
       notFoundB: 'повернутися',
+
+      errorT11: 'Навіть машина може помилятися.',
+      errorT12: 'Щось пішло не так на шляху ',
+      errorT13: '...Можливо, система намагається щось нам сказати?',
+
     },
   },
 }))

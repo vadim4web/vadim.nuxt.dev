@@ -11,7 +11,7 @@
         </li>
 
         <li class="menu-item w100 flex-center text-center">
-          <NuxtLink class="link flex-center w100" to="/about">
+          <NuxtLink class="link flex-center w100" to="/bio">
             {{ $t('AboutMe') }}
           </NuxtLink>
         </li>

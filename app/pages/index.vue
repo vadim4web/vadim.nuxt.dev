@@ -64,7 +64,7 @@
           class="font-variant"
           :font-size="'1.5rem'"
           :padding="'1.5rem 3rem'"
-          path="about"
+          path="bio"
         >
           {{ $t('homeB2') }}
         </InteractiveButton>
