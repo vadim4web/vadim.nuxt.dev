@@ -3,7 +3,7 @@ const { locale, setLocale } = useI18n()
 // const preferredLanguages = usePreferredLanguages()
 
 const showOptions = ref(false)
-const selectedLanguage = ref(locale.value.slice(0, 2))
+const selectedLanguage = ref(locale.value)
 const availableLanguages = ref([
   { code: 'en', flag: '/flags/en.webp', name: 'English' },
   { code: 'uk', flag: '/flags/uk.webp', name: 'Українська' },

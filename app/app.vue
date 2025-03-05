@@ -2,9 +2,12 @@
 import { useLoader } from '~/composables/useLoader'
 
 const { showLoader, setShowLoader } = useLoader()
-const router = useRouter()
 
 const colorMode = useColorMode()
+const { t, locale } = useI18n()
+const router = useRouter()
+const route = useRoute()
+
 const themeColor = ref(() => colorMode.value === 'dark' ? '#000000' : '#ffffff')
 const themeIcon = ref(() => colorMode.value === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg')
 
@@ -31,11 +34,34 @@ router.afterEach(() => {
   scrollUp()
 })
 
+const getPageTitle = computed(() => {
+  const routeName = route.name
+
+  switch (routeName) {
+    case 'index':
+      return `VADIM4WEB – ${t('homeH11')}`
+    case 'about':
+      return `VADIM4WEB | ${t('AboutMe')}`
+    case 'projects':
+      return `VADIM4WEB | ${t('MyWorks')}`
+    case 'project-projectName':
+      return `VADIM4WEB | ${route.params.projectName}`
+    case 'contact':
+      return `VADIM4WEB | ${t('MyContacts')}`
+    // case 'blog':
+    //   return `VADIM4WEB | ${t('MyBlog')}`
+    // case 'blog-postName':
+    //   return `VADIM4WEB | ${route.params.postName}`
+    default:
+      return `VADIM4WEB`
+  }
+})
+
 useHead({
   htmlAttrs: {
-    lang: 'uk',
+    lang: locale.value,
   },
-  title: 'VADIM4WEB – Розробка цифрових рішень',
+  title: getPageTitle,
   meta: [
     { name: 'description', content: 'Розробка цифрових рішень для бізнесу. Досконалість у кожній деталі.' },
     { name: 'author', content: 'Червоняк Вадим Вікторович' },
@@ -50,9 +76,9 @@ useHead({
     { name: 'twitter:title', content: 'VADIM4WEB – Розробка цифрових рішень' },
     { name: 'twitter:description', content: 'Цифрові рішення, які піднімають ваш бізнес на новий рівень.' },
     { name: 'twitter:image', content: '/logo.png' },
-    { name: 'msapplication-TileColor', content: themeColor },
+    { name: 'msapplication-TileColor', content: themeColor.value },
     { name: 'msapplication-TileImage', content: '/ms-icon-144x144.png' },
-    { name: 'theme-color', content: '#ffffff' },
+    { name: 'theme-color', content: themeColor.value },
   ],
   link: [
     { rel: 'manifest', href: '/manifest.json' },
@@ -98,12 +124,27 @@ useHead({
   ],
 })
 
+watch(locale, () => {
+  useHead({
+    title: getPageTitle,
+    htmlAttrs: {
+      lang: locale.value,
+    },
+  })
+})
+
 watch(
   () => colorMode.value,
   (newValue) => {
     themeColor.value = newValue === 'dark' ? '#000000' : '#ffffff'
     themeIcon.value = newValue === 'dark' ? '/favicon_dark.svg' : '/favicon_light.svg'
+
+    useHead({
+      meta: [{ name: 'theme-color', content: themeColor.value }],
+      link: [{ rel: 'icon', href: themeIcon.value }],
+    })
   },
+  { immediate: true },
 )
 </script>
 

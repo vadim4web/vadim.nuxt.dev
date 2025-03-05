@@ -1,13 +1,7 @@
 export default defineI18nConfig(() => ({
   legacy: false,
-  fallbackLocale: {
-    'en-US': ['en'],
-    'en-GB': ['en'],
-    'uk-UA': ['uk'],
-    'ru-RU': ['uk'],
-    'en': ['en'],
-    'default': ['uk'],
-  },
+  fallbackLocale: 'uk',
+  normalizeLocale: true, // Автоматично прибирає суфікси '-US', '-UA'
   messages: {
     en: {
       flagAlt_en: 'The Union Jack',
@@ -16,6 +10,7 @@ export default defineI18nConfig(() => ({
       AboutMe: 'about me',
       MyWorks: 'my works',
       MyContacts: 'my contacts',
+      MyBlog: 'my blog',
       toggleTheme_system: 'Change the theme to system',
       toggleTheme_light: 'Change the theme to dark',
       toggleTheme_dark: 'Change the theme to light',
@@ -119,6 +114,7 @@ export default defineI18nConfig(() => ({
       AboutMe: 'про мене',
       MyWorks: 'мої роботи',
       MyContacts: 'мої контакти',
+      MyBlog: 'мій блог',
       toggleTheme_system: 'Змінити тему на системну',
       toggleTheme_light: 'Змінити тему на темну',
       toggleTheme_dark: 'Змінити тему на світлу',

@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   ],
 
   plugins: [
-    '~/plugins/clickOutside.client.js',
+    '~/plugins/clickOutside.js',
   ],
   ssr: isProd,
 
@@ -59,6 +59,20 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    vueI18n: './i18n.config.ts',
+    strategy: 'no_prefix', // Відключає префікс у роуті (немає /en або /uk)
+    locales: [
+      {
+        code: 'en',
+        iso: 'en',
+        name: 'English',
+      },
+      {
+        code: 'uk',
+        iso: 'uk',
+        name: 'Українська',
+      },
+    ],
+    vueI18n: './i18n.config.ts', // Підключаємо конфіг
+    lazy: false, // Не підвантажуємо асинхронно
   },
 })

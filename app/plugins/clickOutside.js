@@ -1,4 +1,6 @@
-export default {
+import { defineNuxtPlugin } from '#app'
+
+const clickOutsideDirective = {
   beforeMount(el, binding) {
     const clickOutsideHandler = (event) => {
       if (!el.contains(event.target) && el !== event.target) {
@@ -13,3 +15,7 @@ export default {
     document.removeEventListener('click', el._clickOutsideHandler)
   },
 }
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.directive('click-outside', clickOutsideDirective)
+})
