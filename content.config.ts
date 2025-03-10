@@ -1,47 +1,39 @@
-// import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { defineContentConfig, defineCollectionSource, defineCollection, z } from '@nuxt/content'
 
 // export default defineContentConfig({
 //   collections: {
 //     blog: defineCollection({
 //       type: 'page',
-//       source: 'blog/*.md',
 //       schema: z.object({
-//         date: z.string(),
+//         date: z.string(), // Формат дати як string
 //       }),
 //     }),
 //   },
 // })
 
-import { defineContentConfig, defineCollectionSource, defineCollection, z } from '@nuxt/content'
-
-const hackernewsSource = defineCollectionSource({
+const blogSource = defineCollectionSource({
   getKeys: () => {
-    return fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+    return fetch('https://github.com/vadim4web/vadim.nuxt.dev/tree/main/content/blog/index.md')
       .then(res => res.json())
       .then(data => data.map((key: string) => `${key}.json`))
   },
-  getItem: (key: string) => {
-    const id = key.split('.')[0]
-    return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+  getItem: (id) => {
+    return fetch(`https://github.com/vadim4web/vadim.nuxt.dev/tree/main/content/blog/${id}.md`)
       .then(res => res.json())
   },
 })
 
-const hackernews = defineCollection({
+const blog = defineCollection({
   type: 'data',
-  source: hackernewsSource,
+  source: blogSource,
   schema: z.object({
-    title: z.string(),
+    // title: z.string(),
     date: z.date(),
-    type: z.string(),
-    score: z.number(),
-    url: z.string(),
-    by: z.string(),
   }),
 })
 
 export default defineContentConfig({
   collections: {
-    hackernews,
+    blog,
   },
 })

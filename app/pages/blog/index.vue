@@ -1,31 +1,21 @@
 <script setup>
-// const { path } = useRoute()
-const { data } = await useAsyncData('blog', () => {
-  return queryCollection('hackernews').all()
-  // .select('title', 'description', 'path', 'id', 'date')
-  // .order('date', 'DESC')
+const { data: posts } = await useAsyncData('blog', () => {
+  return queryContent('blog')
+    .only(['_path', 'date']) // Отримуємо тільки шлях і дату
+    .sort({ date: -1 }) // Сортуємо за датою (від нових до старих)
+    .find()
 })
-onMounted(() => console.log(data))
 </script>
 
 <template>
   <main>
     <h1 class="padding-13">Blog</h1>
-    <p
-      v-for="post in data"
-      :key="post.id"
-    >
-      >
-      <nuxt-link
-        :to="{
-          name: 'blog-postId',
-          params: { postId: post.id.toString() },
-        }"
-      >
-        <strong>{{ post.title }}</strong>
-      </nuxt-link>
-
-      &nbsp;{{ post.description }}
-    </p>
+    <ul>
+      <li v-for="post in posts" :key="post._path">
+        <nuxt-link :to="post._path">
+          <strong>{{ post._path.replace('/blog/', '') }}</strong>
+        </nuxt-link>
+      </li>
+    </ul>
   </main>
 </template>
