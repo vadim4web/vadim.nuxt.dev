@@ -36,24 +36,25 @@ router.afterEach(() => {
 
 const getPageTitle = computed(() => {
   const routeName = route.name
+  const T = 'VADIM4WEB'
 
   switch (routeName) {
     case 'index':
-      return `VADIM4WEB – ${t('homeH11')}`
-    case 'about':
-      return `VADIM4WEB | ${t('AboutMe')}`
+      return `${T} – ${t('homeH11')}`
+    case 'bio':
+      return `${T} | ${t('AboutMe')}`
     case 'projects':
-      return `VADIM4WEB | ${t('MyWorks')}`
+      return `${T} | ${t('MyWorks')}`
     case 'project-projectName':
-      return `VADIM4WEB | ${route.params.projectName}`
+      return `${T} | ${route.params.projectName}`
     case 'contact':
-      return `VADIM4WEB | ${t('MyContacts')}`
+      return `${T} | ${t('MyContacts')}`
     // case 'blog':
-    //   return `VADIM4WEB | ${t('MyBlog')}`
+    //   return `${T} | ${t('MyBlog')}`
     // case 'blog-postName':
-    //   return `VADIM4WEB | ${route.params.postName}`
+    //   return `${T} | ${route.params.postName}`
     default:
-      return `VADIM4WEB`
+      return `${T}`
   }
 })
 

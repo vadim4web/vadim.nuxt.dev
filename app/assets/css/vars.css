@@ -57,4 +57,5 @@
 :root {
 	--tr-dur: 500ms;
 	--gray: #808080;
+	--header-h: calc(100vmin / 6);
 }

@@ -10,6 +10,7 @@ export default withNuxt(
   'vue/html-indent': 'off',
   'vue/html-self-closing': 'off',
   'vue/require-default-prop': 'off',
+  'vue/multi-word-component-names': 'off',
   'vue/no-unused-vars': ['error', {
     ignorePattern: '^_',
   }],

@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     'dayjs-nuxt',
+    '@nuxt/content',
   ],
 
   plugins: [

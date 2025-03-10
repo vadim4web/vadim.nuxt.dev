@@ -24,15 +24,6 @@ const changeLanguage = (lang) => {
 const toggleMenu = () => showOptions.value = !showOptions.value
 
 const closeMenu = () => showOptions.value = false
-
-// onMounted(() => {
-//   const userLang = preferredLanguages.value.includes('en')
-//     ? 'en'
-//     : userLang.includes('ru') || userLang.includes('uk')
-//       ? 'uk'
-//       : 'en'
-//   setLocale(userLang)
-// })
 </script>
 
 <template>
@@ -66,8 +57,8 @@ const closeMenu = () => showOptions.value = false
 
 <style lang="scss" scoped>
 .lang-swither-wrapper {
-  width: 20vmin;
-  height: 10vmin;
+  width: var(--header-h);
+  height: calc(var(--header-h) / 2);
 
   * {
     cursor: pointer !important;
@@ -75,7 +66,7 @@ const closeMenu = () => showOptions.value = false
 }
 
 .lang-switcher {
-  top: 1.25vmin;
+  top: calc(((var(--header-h) / 2) - 7.5vmin) / 2);
 }
 
 .select {

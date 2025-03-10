@@ -17,6 +17,12 @@
         </li>
 
         <li class="menu-item w100 flex-center text-center">
+          <NuxtLink class="link flex-center w100" to="/blog">
+            {{ $t('MyBlog') }}
+          </NuxtLink>
+        </li>
+
+        <li class="menu-item w100 flex-center text-center">
           <NuxtLink class="link flex-center w100" to="/projects">
             {{ $t('MyWorks') }}
           </NuxtLink>
@@ -43,20 +49,20 @@
   z-index: 3;
   top: 0;
   left: 0;
-  height: 20vmin;
+  height: var(--header-h);
   background: linear-gradient(180deg, var(--bg0), var(--bg50), transparent);
 }
 
 menu {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 3fr repeat(4, 1fr) 3fr;
   place-items: center;
-  height: 20vmin;
-  gap: 0.125rem;
+  height: var(--header-h);
 
   a {
     display: inline-block;
-    height: 20vmin;
+    height: var(--header-h);
+    width: var(--header-h) !important;
     opacity: 0.75;
     font-size: 3vmin;
     letter-spacing: -0.1ch;
@@ -70,7 +76,7 @@ menu {
     &:hover,
     &.NuxtLink-active {
       border: 0.125rem solid var(--color50);
-      border-radius: 10vmin;
+      border-radius: calc(var(--header-h) / 2);
       color: var(--color0);
       opacity: 0.66;
       filter: hue-rotate(90deg);
@@ -86,24 +92,23 @@ menu {
 
 .menu-item {
   text-shadow: 0 0 2rem var(--bg0);
-  --padding: calc((100vw - 100vmin) / 10);
-  --padding2: calc((100vw - 100vmin) / 5);
+  --padding: calc(((100vw - 1.75rem) - 100vmin) / 20);
+  --padding3: calc((((100vw - 1.75rem) - 100vmin) / 20) * 3);
 
   &:first-child,
-  &:nth-child(3),
   &:last-child {
-    padding: 0 var(--padding);
+    padding-inline: var(--padding3);
   }
 
-  &:nth-child(2) {
-    padding-left: var(--padding2);
-  }
-  &:nth-child(4) {
-    padding-right: var(--padding2);
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(5) {
+    padding-inline: var(--padding);
   }
 }
 
 .global-view {
-  height: 20vmin;
+  height: var(--header-h);
 }
 </style>

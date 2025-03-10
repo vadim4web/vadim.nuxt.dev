@@ -137,8 +137,8 @@ onUpdated(() => {
 <style lang="scss" scoped>
 .theme-toggler {
   z-index: 1;
-  width: 20vmin;
-  height: 10vmin;
+  width: var(--header-h);
+  height: calc(var(--header-h) / 2);
   background: transparent;
   transition: transform 0.5s;
   cursor: pointer;
