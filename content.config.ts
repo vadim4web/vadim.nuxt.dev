@@ -1,34 +1,31 @@
 import { defineContentConfig, defineCollectionSource, defineCollection, z } from '@nuxt/content'
 
-// export default defineContentConfig({
-//   collections: {
-//     blog: defineCollection({
-//       type: 'page',
-//       schema: z.object({
-//         date: z.string(), // Формат дати як string
-//       }),
-//     }),
-//   },
-// })
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/vadim4web/vadim.nuxt.dev/main/content/blog'
 
 const blogSource = defineCollectionSource({
-  getKeys: () => {
-    return fetch('https://github.com/vadim4web/vadim.nuxt.dev/tree/main/content/blog/index.md')
-      .then(res => res.json())
-      .then(data => data.map((key: string) => `${key}.json`))
+  async getKeys() {
+    // Фетчимо список постів із index.md
+    const res = await fetch(`${GITHUB_RAW_URL}/index.md`)
+    if (!res.ok) throw new Error('Не вдалося отримати index.md')
+
+    const data = await res.text()
+    return JSON.parse(data).map((id: string) => `${id}.md`)
   },
-  getItem: (id) => {
-    return fetch(`https://github.com/vadim4web/vadim.nuxt.dev/tree/main/content/blog/${id}.md`)
-      .then(res => res.json())
+
+  async getItem(key) {
+    // Отримуємо кожен Markdown-файл
+    const res = await fetch(`${GITHUB_RAW_URL}/${key}`)
+    if (!res.ok) throw new Error(`Не вдалося отримати ${key}`)
+
+    return await res.text()// Повертаємо Markdown як текст
   },
 })
 
 const blog = defineCollection({
-  type: 'data',
+  type: 'page',
   source: blogSource,
   schema: z.object({
-    // title: z.string(),
-    date: z.date(),
+    date: z.string(),
   }),
 })
 
