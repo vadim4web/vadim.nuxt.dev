@@ -1,19 +1,14 @@
 <script setup>
-const { data: posts } = await useAsyncData('blog', () => {
-  return queryContent('blog')
-    .only(['_path', 'date']) // Отримуємо тільки шлях і дату
-    .sort({ date: -1 }) // Сортуємо за датою (від нових до старих)
-    .find()
-})
+import { posts } from '~/assets/data'
 </script>
 
 <template>
   <main>
-    <h1 class="padding-13">Blog</h1>
+    <h2 class="padding-13">Blog</h2>
     <ul>
-      <li v-for="post in posts" :key="post._path">
-        <nuxt-link :to="post._path">
-          <strong>{{ post._path.replace('/blog/', '') }}</strong>
+      <li v-for="post in posts" :key="post.id">
+        <nuxt-link :to="'/blog/' + post.path">
+          <strong>{{ post.title }}</strong>
         </nuxt-link>
       </li>
     </ul>
