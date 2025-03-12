@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+const ProjectCards = defineAsyncComponent(
+	() => import('~/components/ProjectCards.vue')
+)
+const TechStackSlider = defineAsyncComponent(
+	() => import('~/components/TechStackSlider.vue')
+)
+</script>
 
 <template>
   <main class="home">
