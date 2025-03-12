@@ -88,7 +88,7 @@ const handleClick = () => action?.()
     height: 100%;
     overflow: hidden;
     border-radius: inherit;
-    box-shadow: inset 1rem 1rem 1rem var(--color25);
+    box-shadow: inset 1rem 1rem 1rem var(--color125);
   }
 
   &::after {
@@ -99,7 +99,7 @@ const handleClick = () => action?.()
     height: 100%;
     overflow: hidden;
     border-radius: inherit;
-    box-shadow: inset -1rem -1rem 1rem var(--color50);
+    box-shadow: inset -1rem -1rem 1rem var(--color33);
   }
 }
 </style>

@@ -3,12 +3,16 @@
 
 	--bg0: #131313;
 	--bg50: #13131380;
-	--bg25: #13131320;
+	--bg33: #13131360;
+	--bg25: #13131340;
+	--bg125: #13131320;
 	--bg2: #1a1a1a;
 	--color-op: #000000;
 	--color0: #ffffff;
 	--color50: #ffffff80;
+	--color33: #ffffff60;
 	--color25: #ffffff40;
+	--color125: #ffffff20;
 	--color2: #a8a8a8;
 	--accent0: #ffd800;
 	--accent50: #ffd80080;
@@ -32,12 +36,16 @@
 
 	--bg0: #ececec;
 	--bg50: #ececec80;
-	--bg25: #ececec20;
+	--bg33: #ececec60;
+	--bg25: #ececec40;
+	--bg125: #ececec20;
 	--bg2: #dbdbdb;
 	--color-op: #ffffff;
 	--color0: #000000;
 	--color50: #00000080;
+	--color33: #00000060;
 	--color25: #00000040;
+	--color125: #00000020;
 	--color2: #575757;
 	--accent0: #0056b9;
 	--accent50: #0056b980;
