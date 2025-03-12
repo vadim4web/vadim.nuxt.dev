@@ -66,15 +66,17 @@
 	z-index: -1;
 }
 
-.card-back {
+.card-back,
+.ssh-pre.card-back::before {
 	background: var(--bg25);
 	backdrop-filter: blur(0.33rem);
-	border: 1px solid var(--accent25);
-	overflow: hidden;
+	border: 1px solid var(--accent25) !important;
 }
 
 .card-back:hover,
-.card-back:has(:focus) {
+.ssh-pre.card-back:hover::before,
+.card-back:has(:focus),
+.ssh-pre.card-back:has(:focus)::before {
 	backdrop-filter: blur(0.33rem);
 	filter: brightness(1.05) contrast(1.05);
 	-webkit-filter: brightness(1.05) contrast(1.05);

@@ -10,11 +10,14 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/i18n',
     'dayjs-nuxt',
+    'nuxt-monaco-editor',
+    '@nuxtjs/tailwindcss',
   ],
 
   plugins: [
     '~/plugins/clickOutside.js',
   ],
+
   ssr: isProd,
 
   // https://devtools.nuxt.com

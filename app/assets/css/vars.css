@@ -8,6 +8,7 @@
 	--color-op: #000000;
 	--color0: #ffffff;
 	--color50: #ffffff80;
+	--color25: #ffffff40;
 	--color2: #a8a8a8;
 	--accent0: #ffd800;
 	--accent50: #ffd80080;
@@ -36,6 +37,7 @@
 	--color-op: #ffffff;
 	--color0: #000000;
 	--color50: #00000080;
+	--color25: #00000040;
 	--color2: #575757;
 	--accent0: #0056b9;
 	--accent50: #0056b980;

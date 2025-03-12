@@ -42,7 +42,7 @@ const handleClick = () => action?.()
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
-          #ffffff, ${bg} 33%)`
+          #ffffff, ${bg} 33%, #808080)`
         : bg,
       boxShadow: `0 0 1.5rem ${bg}`,
       fontSize,
@@ -88,7 +88,7 @@ const handleClick = () => action?.()
     height: 100%;
     overflow: hidden;
     border-radius: inherit;
-    box-shadow: inset 1rem 1rem 1rem #fff4;
+    box-shadow: inset 1rem 1rem 1rem var(--color25);
   }
 
   &::after {
@@ -99,7 +99,7 @@ const handleClick = () => action?.()
     height: 100%;
     overflow: hidden;
     border-radius: inherit;
-    box-shadow: inset -1rem -1rem 1rem #0004;
+    box-shadow: inset -1rem -1rem 1rem var(--color50);
   }
 }
 </style>
