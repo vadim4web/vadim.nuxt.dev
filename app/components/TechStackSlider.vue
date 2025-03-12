@@ -26,7 +26,7 @@ onUpdated(() => setSlideContentGrid())
 </script>
 
 <template>
-  <section class="flex-col-center tech-stack-slider">
+  <section class="flex flex flex-col items-center justify-center tech-stack-slider">
     <h2 class="h2 text-center">
       {{ $t('homeH23') }}
     </h2>
@@ -36,7 +36,7 @@ onUpdated(() => setSlideContentGrid())
       :arrows-outside="true"
       autoplay
       :bullets="false"
-      class="no-shadow w100 rel"
+      class="no-shadow w-full relative"
       :fixed-height="true"
     >
       <VueperSlide

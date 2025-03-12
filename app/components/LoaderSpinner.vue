@@ -107,7 +107,7 @@ watch(
 
 <template>
   <div
-    class="spinner-container flex-center w100"
+    class="spinner-container flex items-center justify-center w-full"
     :class="{
       'vertical': classes?.vertical,
       'horizontal': classes?.horizontal,
@@ -115,7 +115,7 @@ watch(
       'preview': classes?.preview,
       'other': classes?.other,
       'one-of-three': three,
-      'null': classes?.white_bg,
+      'null': classes?.bgWhite,
     }"
   >
     <canvas

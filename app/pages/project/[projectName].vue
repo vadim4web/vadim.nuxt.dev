@@ -47,18 +47,18 @@ watchEffect(() => {
 </script>
 
 <template>
-  <main class="flex-col project-page">
+  <main class="flex flex-col project-page">
     <PageHeader head-key="projectH21" text-key="projectT1" />
 
-    <div class="project-details flex-col">
+    <div class="project-details flex flex-col">
       <FrameLoader
-        :iframe-class="{ white_bg: project.white_bg, preview: true }"
+        :iframe-class="{ 'bg-white': project['bg-white'], 'preview': true }"
         :iframe-src="demo"
         :iframe-title="project.title"
         :scrolling="'yes'"
       />
 
-      <div class="text flex-col">
+      <div class="text flex flex-col">
         <h3 class="h3">
           {{ project.title }}
         </h3>
@@ -156,15 +156,15 @@ watchEffect(() => {
       </NuxtLink>
     </div>
 
-    <div class="others flex-col">
+    <div class="others flex flex-col">
       <h2 class="h1">
         {{ $t('projectH22') }}
       </h2>
 
       <div class="cards">
-        <div v-for="(p, i) in others" :key="i" class="card card-back br1 rel">
+        <div v-for="(p, i) in others" :key="i" class="card card-back rounded-[1rem] relative">
           <NuxtLink
-            class="flex-col cursor-help"
+            class="flex flex-col cursor-help"
             :title="$t('worksDetails') + ' «' + p.title + '»'"
             :to="{
               name: 'project-projectName',
@@ -173,11 +173,11 @@ watchEffect(() => {
           >
             <FrameLoader
               :iframe-class="{
-                white_bg: p.white_bg,
-                other: true,
-                w100: true,
-                br1: true,
-                rel: true,
+                'bg-white': p['bg-white'],
+                'other': true,
+                'w-full': true,
+                'rounded-[1rem]': true,
+                'relative': true,
               }"
               :iframe-src="getPath(p.path)"
               :iframe-style="{ zoom: zoom, borderRadius: br }"
@@ -186,7 +186,7 @@ watchEffect(() => {
               :three="true"
             />
 
-            <div class="other-text flex-col-between text-center">
+            <div class="other-text flex flex flex-col items-center justify-between text-center">
               <h4 class="h4">
                 <em>
                   {{ p.title }}
@@ -210,7 +210,7 @@ watchEffect(() => {
     aspect-ratio: 1 / 1;
     border-radius: 2rem;
 
-    &:not(.white_bg) {
+    &:not(.bg-white) {
       background-color: var(--bg50);
     }
 
@@ -302,7 +302,7 @@ watchEffect(() => {
     aspect-ratio: 4 / 5;
     z-index: -1;
 
-    &:not(.white_bg) {
+    &:not(.bg-white) {
       background-color: var(--bg50);
     }
   }

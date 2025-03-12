@@ -3,38 +3,38 @@
 <template>
   <header class="header back-blur05">
     <nav>
-      <menu class="w100 rel">
-        <li class="menu-item w100 flex-center text-center">
-          <NuxtLink class="link flex-center w100 logo-link" to="/">
+      <menu class="w-full relative">
+        <li class="menu-item w-full flex items-center justify-center text-center">
+          <NuxtLink class="link flex items-center justify-center w-full logo-link" to="/">
             <app-logo font-weight="bold" />
           </NuxtLink>
         </li>
 
-        <li class="menu-item w100 flex-center text-center">
-          <NuxtLink class="link flex-center w100" to="/bio">
+        <li class="menu-item w-full flex items-center justify-center text-center">
+          <NuxtLink class="link flex items-center justify-center w-full" to="/bio">
             {{ $t('AboutMe') }}
           </NuxtLink>
         </li>
 
-        <li class="menu-item w100 flex-center text-center">
-          <NuxtLink class="link flex-center w100" to="/blog">
+        <li class="menu-item w-full flex items-center justify-center text-center">
+          <NuxtLink class="link flex items-center justify-center w-full" to="/blog">
             {{ $t('MyBlog') }}
           </NuxtLink>
         </li>
 
-        <li class="menu-item w100 flex-center text-center">
-          <NuxtLink class="link flex-center w100" to="/projects">
+        <li class="menu-item w-full flex items-center justify-center text-center">
+          <NuxtLink class="link flex items-center justify-center w-full" to="/projects">
             {{ $t('MyWorks') }}
           </NuxtLink>
         </li>
 
-        <li class="menu-item w100 flex-center text-center">
-          <NuxtLink class="link flex-center w100" to="/contact">
+        <li class="menu-item w-full flex items-center justify-center text-center">
+          <NuxtLink class="link flex items-center justify-center w-full" to="/contact">
             {{ $t('MyContacts') }}
           </NuxtLink>
         </li>
 
-        <li class="menu-item w100 flex-col-center text-center global-view">
+        <li class="menu-item w-full flex flex flex-col items-center justify-center text-center global-view">
           <ThemeToggler />
           <LanguageSwitcher />
         </li>

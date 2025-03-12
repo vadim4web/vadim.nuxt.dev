@@ -30,14 +30,14 @@ onUpdated(() => {
 
 <template>
   <button
-    class="theme-toggler flex-col-center"
+    class="theme-toggler flex flex flex-col items-center justify-center"
     :title="$t(`toggleTheme${'_' + colorMode.value}`)"
     aria-label="Theme"
     @click="isDark = !isDark"
   >
     <span
       id="spot"
-      class="flex-col-center rel"
+      class="flex flex flex-col items-center justify-center relative"
       :style="{
         background: `radial-gradient(ellipse at ${offsetX}% ${offsetY}%,
           var(--accent1_50) 5%, var(--color0))`,

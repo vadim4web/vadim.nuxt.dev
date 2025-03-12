@@ -28,7 +28,7 @@ const setLoaded = () => setTimeout(() => (isLoaded.value = true), 0)
 
   <LoaderSpinner
     v-if="!isLoaded"
-    class="placeholder iframe br1 back-blur05"
+    class="placeholder iframe rounded-[1rem] back-blur05"
     :classes="iframeClass"
     :three="three"
   />

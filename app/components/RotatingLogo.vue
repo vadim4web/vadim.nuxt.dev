@@ -146,7 +146,7 @@ onUnmounted(() => {
 <template>
   <div
     ref="canvasContainer"
-    class="abs w100 flex-center"
+    class="absolute w-full flex items-center justify-center"
     style="filter: drop-shadow(0 0 1rem var(--accent0));
       -webkit-filter: drop-shadow(0 0 1rem var(--accent0));"
   />

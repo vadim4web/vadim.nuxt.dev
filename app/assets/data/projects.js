@@ -55,7 +55,7 @@ const vertical = [
     path: 'random-user-vue',
     orientation: '|',
     deps: ['vue ^3.0.0', 'axios ^0.27.0'],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'Vue grocery store app',
@@ -113,7 +113,7 @@ const vertical = [
       'stylelint ^13.5.0',
       'stylelint-scss ^3.17.2',
     ],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'JSON -> list transformer',
@@ -260,7 +260,7 @@ const vertical = [
     path: 'python',
     orientation: '|',
     deps: ['pyodide ^0.24.0', 'codemirror ^5.65.14'],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'this.github.io',
@@ -354,7 +354,7 @@ const horizontal = [
     path: 'wordle-js',
     orientation: '-',
     deps: [],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'Custom shaped loading',
@@ -381,7 +381,7 @@ const horizontal = [
     path: 'travel-app-vue',
     orientation: '-',
     deps: ['core-js ^3.8.3', 'vue ^3.2.13', 'vue-router ^4.0.3'],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'Nice gadgets store',
@@ -426,7 +426,7 @@ const horizontal = [
       'sequelize-typescript ^2.1.5',
       'ts-node ^10.9.1',
     ],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'Nuxt theme toggler',
@@ -602,7 +602,7 @@ const horizontal = [
       'express ^4.21.2',
       'ws ^8.18.0',
     ],
-    white_bg: true,
+    'bg-white': true,
   },
   {
     title: 'GitHub Lang Stats',

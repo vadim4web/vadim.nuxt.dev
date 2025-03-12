@@ -1,10 +1,10 @@
 <script setup></script>
 
 <template>
-  <main class="flex-col">
+  <main class="flex flex-col">
     <PageHeader head-key="aboutH21" text-key="aboutT1" />
 
-    <div class="mission flex-col">
+    <div class="mission flex flex-col">
       <div class="mission-header">
         <h2 class="h2">
           {{ $t('aboutH221') }}
@@ -25,10 +25,10 @@
         </p>
       </div>
 
-      <div class="photos w100 rel">
-        <div class="photo photo1 w100" />
+      <div class="photos w-full relative">
+        <div class="photo photo1 w-full" />
 
-        <div class="photo photo2 w100" />
+        <div class="photo photo2 w-full" />
       </div>
     </div>
 

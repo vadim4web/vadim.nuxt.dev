@@ -28,21 +28,21 @@ const closeMenu = () => showOptions.value = false
 
 <template>
   <div
-    class="lang-swither-wrapper flex-center rel"
+    class="lang-swither-wrapper flex items-center justify-center relative"
     role="button"
     tabindex="0"
     :title="$t('toggleLangTip')"
   >
     <menu
       v-click-outside="closeMenu"
-      class="lang-switcher select flex-col-center hideO abs"
+      class="lang-switcher select flex flex flex-col items-center justify-center overflow-hidden absolute"
       :class="{ open: showOptions, close: !showOptions }"
       @click="toggleMenu"
     >
       <li
         v-for="lang in sortedLanguages"
         :key="lang.code"
-        class="select-option rel"
+        class="select-option relative"
         @click="changeLanguage(lang.code)"
       >
         <img

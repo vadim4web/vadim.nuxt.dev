@@ -9,21 +9,21 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 </script>
 
 <template>
-  <div class="three three-projects flex-center w100">
+  <div class="three three-projects flex items-center justify-center w-full">
     <div
-      v-for="({ title, name, stack, tags, path, white_bg }, i) in three"
+      v-for="({ title, name, stack, tags, path, bgWhite }, i) in three"
       :key="i"
-      class="card card-back br1 hideO"
+      class="card card-back rounded-[1rem] overflow-hidden"
     >
-      <div class="frame w100 rel">
+      <div class="frame w-full relative">
         <FrameLoader
           :iframe-class="{
-            white_bg: white_bg,
-            iframe: true,
-            w100: true,
-            hideO: true,
-            br1: true,
-            abs: true,
+            'bg-white': bgWhite,
+            'iframe': true,
+            'w-full': true,
+            'overflow-hidden': true,
+            'rounded-[1rem]': true,
+            'absolute': true,
           }"
           :iframe-src="getPath(path)"
           :iframe-style="{ zoom: zoom, borderRadius: br }"
@@ -33,9 +33,9 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
         />
       </div>
 
-      <h4 class="h4 text-left rel">
+      <h4 class="h4 text-left relative">
         <NuxtLink
-          class="text-wrap hideO cursor-help"
+          class="text-wrap overflow-hidden cursor-help"
           :title="$t('worksDetails') + ' «' + title + '»'"
           :to="{ name: 'project-projectName', params: { projectName: name } }"
         >

@@ -30,35 +30,35 @@ onUpdated(() => handleScroll())
 </script>
 
 <template>
-  <main class="flex-col projects-page">
+  <main class="flex flex-col projects-page">
     <PageHeader head-key="worksH2" text-key="worksT1" />
 
-    <div class="projects-container w100 rel">
+    <div class="projects-container w-full relative">
       <div
         v-for="(a, index) in projectsToShow"
         :id="'three-' + index"
         :key="index"
-        class="three w100 rel"
+        class="three w-full relative"
       >
         <div
           v-for="(p, i) in a"
           :key="i"
-          class="project card-back br1 text-center flex-col hideO"
+          class="project card-back rounded-[1rem] text-center flex flex-col overflow-hidden"
         >
           <FrameLoader
             :iframe-class="{
-              vertical: p.orientation === '|',
-              horizontal: p.orientation === '-',
-              white_bg: p.white_bg,
-              iframe: true,
-              w100: true,
+              'vertical': p.orientation === '|',
+              'horizontal': p.orientation === '-',
+              'bg-white': p['bg-white'],
+              'iframe': true,
+              'wFull': true,
             }"
             :iframe-src="getPath(p.path)"
             :iframe-title="p.title"
             :scrolling="'no'"
           />
 
-          <div class="title-box flex-align">
+          <div class="title-box flex items-center">
             <p class="t3">
               {{ p.tags.join(' | ') }}
             </p>
@@ -84,7 +84,7 @@ onUpdated(() => handleScroll())
         :action="handleLoadMore"
         :bg="'var(--accent50)'"
         :border-radius="'2.166rem'"
-        class="font-variant load-more text-center flex-center"
+        class="font-variant load-more text-center flex items-center justify-center"
         :font-size="'1.33rem'"
         :padding="'1.5rem 2.5rem'"
       >

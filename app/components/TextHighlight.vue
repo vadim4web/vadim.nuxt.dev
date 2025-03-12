@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="text-highlight abs"
+    class="text-highlight absolute"
     fill="none"
     height="651"
     style="z-index: -1; width: 60vmin; height: 40vmin; transform: rotate(10deg)"

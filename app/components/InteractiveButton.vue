@@ -19,7 +19,7 @@ const handleClick = () => action?.()
   <NuxtLink
     v-if="isLink"
     ref="target"
-    class="interactive-button flex-center hideO rel"
+    class="interactive-button flex items-center justify-center overflow-hidden relative"
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
@@ -38,7 +38,7 @@ const handleClick = () => action?.()
   <button
     v-else
     ref="target"
-    class="interactive-button flex-center hideO rel"
+    class="interactive-button flex items-center justify-center overflow-hidden relative"
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,

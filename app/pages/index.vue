@@ -2,7 +2,7 @@
 
 <template>
   <main class="home">
-    <section class="head w100 content flex-col-center text-center">
+    <section class="head w-full content flex flex flex-col items-center justify-center text-center">
       <div class="h1">
         <h2
           class="h1_h2"
@@ -40,9 +40,9 @@
       </InteractiveButton>
     </section>
 
-    <section class="hero w100">
-      <div class="left content flex-col-center w100 rel">
-        <div class="text flex-col">
+    <section class="hero w-full">
+      <div class="left content flex flex flex-col items-center justify-center w-full relative">
+        <div class="text flex flex-col">
           <h2 class="h2">
             <TextHighlight />
 
@@ -70,12 +70,12 @@
         </InteractiveButton>
       </div>
 
-      <div class="right rel">
-        <div class="photo w100" />
+      <div class="right relative">
+        <div class="photo w-full" />
       </div>
     </section>
 
-    <section class="projects flex-col-center">
+    <section class="projects flex flex flex-col items-center justify-center">
       <h2 class="h2 text-center">
         {{ $t('homeH22') }}
         <TextHighlight />

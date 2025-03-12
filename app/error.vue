@@ -19,8 +19,8 @@ const is404 = error?.statusCode === 404
 </script>
 
 <template>
-  <main class="flex-col-center error-page w100">
-    <h2 class="h2 flex-col-center text-center">
+  <main class="flex flex flex-col items-center justify-center error-page w-full">
+    <h2 class="h2 flex flex flex-col items-center justify-center text-center">
       {{ error?.statusCode }}
       <TextHighlight />
 

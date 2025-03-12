@@ -6,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex-col page-header padding-13">
+  <div class="flex flex-col page-header padding-13">
     <h2 class="h2">
       <strong>
         {{ $t(headKey) }}

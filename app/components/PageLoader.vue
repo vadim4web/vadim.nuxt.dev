@@ -141,23 +141,23 @@ onMounted(() => {
 <template>
   <div
     id="logoOverlay"
-    class="flex-col-center"
+    class="flex flex flex-col items-center justify-center"
     :class="{ fadeOut: fadeOutClass }"
     :style="{ opacity: isVisible ? 'inherit' : 0, zIndex: isVisible ? 4 : 0 }"
     @animationend="handleAnimationEnd"
   >
-    <div id="logo2dWrapper" class="rel">
+    <div id="logo2dWrapper" class="relative">
       <canvas
         id="logo2dCanvas"
         ref="logo2dCanvas"
-        class="rel"
+        class="relative"
         height="400"
         stroke="#808080"
         width="400"
       />
       <svg
         id="svgPlaceholder"
-        class="abs"
+        class="absolute"
         viewBox="0 0 400 400"
         xmlns="http://www.w3.org/2000/svg"
       >

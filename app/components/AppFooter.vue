@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <footer class="footer flex-align flex-col rel">
+  <footer class="footer items-center flex flex-col relative">
     <h5 class="h4 top text-center">
       <NuxtLink
         class="link not-to-show-active"
@@ -26,7 +26,7 @@
       </NuxtLink>
     </h5>
 
-    <div class="grid info w100">
+    <div class="grid info w-full">
       <app-logo font-weight="normal" />
 
       <address class="text-center">
@@ -144,7 +144,7 @@
       </div>
     </div>
 
-    <h5 class="h4 hr-above text-center w100">
+    <h5 class="h4 hr-above text-center w-full">
       &copy; 2020-{{ new Date().getFullYear() }}
       <NuxtLink
         to="https://github.com/vadim4web"

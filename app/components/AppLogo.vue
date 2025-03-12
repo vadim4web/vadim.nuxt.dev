@@ -8,7 +8,7 @@ const strokeWidth = computed(() =>
 
 <template>
   <svg
-    class="logo-svg flex-center"
+    class="logo-svg flex items-center justify-center"
     viewBox="0 0 500 100"
     xmlns="http://www.w3.org/2000/svg"
   >

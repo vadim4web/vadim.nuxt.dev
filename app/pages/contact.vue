@@ -47,10 +47,10 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <main class="flex-col">
+  <main class="flex flex-col">
     <PageHeader head-key="contactH21" text-key="contactT1" />
 
-    <div class="flex-col">
+    <div class="flex flex-col">
       <div class="grid-text-form">
         <h2 class="h2">
           {{ $t('contactH221') }}<br>
@@ -59,8 +59,8 @@ const submitForm = async () => {
         </h2>
 
         <form @submit.prevent="submitForm">
-          <div class="form flex-col card-back rel">
-            <label class="rel" :data-text="$t('name')">
+          <div class="form flex flex-col card-back relative">
+            <label class="relative" :data-text="$t('name')">
               <input
                 v-model="name"
                 aria-label="name-input"
@@ -70,7 +70,7 @@ const submitForm = async () => {
               >
             </label>
 
-            <label class="rel" :data-text="$t('email')">
+            <label class="relative" :data-text="$t('email')">
               <input
                 v-model="email"
                 aria-label="email-input"
@@ -79,7 +79,7 @@ const submitForm = async () => {
               >
             </label>
 
-            <label class="rel" :data-text="$t('project')">
+            <label class="relative" :data-text="$t('project')">
               <input
                 v-model="subject"
                 aria-label="subject-input"
@@ -88,16 +88,16 @@ const submitForm = async () => {
               >
             </label>
 
-            <label class="rel" :data-text="$t('comment')">
+            <label class="relative" :data-text="$t('comment')">
               <textarea v-model="message" />
             </label>
           </div>
 
-          <div class="button-wrapper rel">
+          <div class="button-wrapper relative">
             <InteractiveButton
               :bg="'var(--accent50)'"
               :border-radius="'1.75rem'"
-              class="font-variant abs"
+              class="font-variant absolute"
               :font-size="'2.1rem'"
               :padding="'0'"
               tabindex="0"
@@ -109,9 +109,9 @@ const submitForm = async () => {
       </div>
     </div>
 
-    <div class="laptop w100 br1" />
+    <div class="laptop w-full rounded-[1rem]" />
 
-    <div class="address w100">
+    <div class="address w-full">
       <h4 class="h4">
         <a class="link" href="tel:+380933789883" :title="$t('callMe')">
           +380-933-789-883
