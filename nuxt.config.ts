@@ -42,10 +42,16 @@ export default defineNuxtConfig({
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2024-07-30',
 
+  nitro: {
+    prerender: {
+      autoSubfolderIndex: false,
+    },
+  },
+
   // https://hub.nuxt.com/docs/getting-started/installation#options
   hub: {
-    blob: isProd,
-    cache: isProd,
+    // blob: isProd,
+    // cache: isProd,
   },
 
   dayjs: {

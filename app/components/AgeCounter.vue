@@ -1,6 +1,10 @@
 <script setup>
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
+// import * as dayjs from 'dayjs'
+
 import duration from 'dayjs/plugin/duration'
+
+const dayjs = useDayjs()
 
 dayjs.extend(duration)
 
