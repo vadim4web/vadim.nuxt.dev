@@ -33,17 +33,17 @@ onUpdated(() => handleScroll())
   <main class="flex flex-col projects-page">
     <PageHeader head-key="worksH2" text-key="worksT1" />
 
-    <div class="projects-container w-full relative">
+    <div class="projects-container flex flex-wrap gap-[3rem] w-full relative">
       <div
         v-for="(a, index) in projectsToShow"
         :id="'three-' + index"
         :key="index"
-        class="three w-full relative"
+        class="three flex flex-wrap gap-[1.5rem] w-full relative"
       >
         <div
           v-for="(p, i) in a"
           :key="i"
-          class="project card-back rounded-[1rem] text-center flex flex-col overflow-hidden"
+          class="project card-back rounded-[1rem] text-center flex flex-col justify-between shrink grow-0 overflow-hidden h-auto"
         >
           <FrameLoader
             :iframe-class="{
@@ -58,7 +58,7 @@ onUpdated(() => handleScroll())
             :scrolling="'no'"
           />
 
-          <div class="title-box flex items-center">
+          <div class="title-box flex items-center justify-between">
             <p class="t3">
               {{ p.tags.join(' | ') }}
             </p>
@@ -84,7 +84,7 @@ onUpdated(() => handleScroll())
         :action="handleLoadMore"
         :bg="'var(--accent50)'"
         :border-radius="'2.166rem'"
-        class="font-variant load-more text-center flex items-center justify-center"
+        class="font-variant load-more text-center font-bold tracking-[0.1rem] flex items-center justify-center"
         :font-size="'1.33rem'"
         :padding="'1.5rem 2.5rem'"
       >
@@ -98,18 +98,10 @@ onUpdated(() => handleScroll())
 .projects-page {
   .projects-container {
     padding: 6.25rem 0 10rem;
-    gap: 3rem;
-  }
-
-  .projects-container,
-  .three {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .three {
     margin: 0 auto;
-    gap: 1.5rem;
 
     @media (orientation: landscape) {
       width: calc(50% - 1.5rem);
@@ -121,10 +113,6 @@ onUpdated(() => handleScroll())
   }
 
   .project {
-    height: auto;
-    justify-content: space-between;
-    flex-shrink: 1;
-    flex-grow: 0;
     padding-bottom: 0.5rem;
 
     &:has(.vertical) {
@@ -151,12 +139,10 @@ onUpdated(() => handleScroll())
 
     .title-box {
       padding: 0.25rem;
-      justify-content: space-between;
     }
 
     &:has(.vertical) .title-box {
       flex-direction: column;
-      justify-content: space-between;
       gap: 1rem;
     }
 
@@ -211,9 +197,6 @@ onUpdated(() => handleScroll())
   }
 
   .load-more {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
     margin: 3.75rem auto 0;
   }
 }

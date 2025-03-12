@@ -11,15 +11,23 @@ const { path, action, fontSize, padding, borderRadius, bg } = defineProps({
 const isLink = !!path
 const target = ref(null)
 const { elementX, elementY, isOutside } = useMouseInElement(target)
+const router = useRouter()
 
-const handleClick = () => action?.()
+const handleClick = () => {
+  if (action) {
+    action()
+  }
+  else if (!action && !isLink) {
+    router.go(-1)
+  }
+}
 </script>
 
 <template>
   <NuxtLink
     v-if="isLink"
     ref="target"
-    class="interactive-button flex items-center justify-center overflow-hidden relative"
+    class="interactive-button flex items-center justify-center overflow-hidden relative font-bold leading-none z-1"
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
@@ -38,7 +46,7 @@ const handleClick = () => action?.()
   <button
     v-else
     ref="target"
-    class="interactive-button flex items-center justify-center overflow-hidden relative"
+    class="interactive-button flex items-center justify-center overflow-hidden relative font-bold leading-none z-1"
     :style="{
       background: !isOutside
         ? `radial-gradient(circle at ${elementX}px ${elementY}px,
@@ -58,9 +66,6 @@ const handleClick = () => action?.()
 
 <style lang="scss" scoped>
 .interactive-button {
-  z-index: 1;
-  line-height: 100%;
-  font-weight: bold;
   color: var(--color0);
   text-shadow: 0 0 0.5em var(--color-op);
   mix-blend-mode: var(--mix-blend-mode1);

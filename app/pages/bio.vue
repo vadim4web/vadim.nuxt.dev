@@ -5,7 +5,7 @@
     <PageHeader head-key="aboutH21" text-key="aboutT1" />
 
     <div class="mission flex flex-col">
-      <div class="mission-header">
+      <div class="mission-header grid gap-[2.2rem]">
         <h2 class="h2">
           {{ $t('aboutH221') }}
           <br>
@@ -25,10 +25,9 @@
         </p>
       </div>
 
-      <div class="photos w-full relative">
-        <div class="photo photo1 w-full" />
-
-        <div class="photo photo2 w-full" />
+      <div class="photos w-full relative grid grid-cols-[1fr_2fr] gap-[1.75rem] h-[32rem]">
+        <div class="photo h-[32rem] rounded-[0.5rem] photo1 w-full" />
+        <div class="photo h-[32rem] rounded-[0.5rem] photo2 w-full" />
       </div>
     </div>
 
@@ -45,8 +44,6 @@
 
 <style lang="scss" scoped>
 .mission-header {
-  display: grid;
-  grid-gap: 2.2rem;
   padding: 5.5rem 0 6.25rem 1.5rem;
 
   .h2 {
@@ -104,10 +101,6 @@
 }
 
 .photos {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1.75rem;
-  height: 32rem;
   margin-bottom: 10rem;
 
   &::before,
@@ -134,8 +127,6 @@
   }
 
   .photo {
-    height: 32rem;
-    border-radius: 0.5rem;
     background-size: cover;
     background-repeat: no-repeat;
     filter: var(--filter1);

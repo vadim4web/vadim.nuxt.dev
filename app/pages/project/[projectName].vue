@@ -50,7 +50,7 @@ watchEffect(() => {
   <main class="flex flex-col project-page">
     <PageHeader head-key="projectH21" text-key="projectT1" />
 
-    <div class="project-details flex flex-col">
+    <div class="project-details flex flex-col items-center">
       <FrameLoader
         :iframe-class="{ 'bg-white': project['bg-white'], 'preview': true }"
         :iframe-src="demo"
@@ -58,8 +58,8 @@ watchEffect(() => {
         :scrolling="'yes'"
       />
 
-      <div class="text flex flex-col">
-        <h3 class="h3">
+      <div class="text flex flex-col w-[65%] gap-[1.875rem]">
+        <h3 class="h3 text-[2rem]">
           {{ project.title }}
         </h3>
 
@@ -132,9 +132,9 @@ watchEffect(() => {
       </div>
     </div>
 
-    <div class="navigation">
+    <div class="navigation flex justify-between">
       <NuxtLink
-        class="nav-button prev"
+        class="nav-button prev flex justify-center h-[1.5625rem] gap-[1.25rem] text-[0.875rem] font-semibold leading-[170%]"
         :to="{
           name: 'project-projectName',
           params: { projectName: prev.name },
@@ -145,7 +145,7 @@ watchEffect(() => {
       </NuxtLink>
 
       <NuxtLink
-        class="nav-button next"
+        class="nav-button next flex justify-center h-[1.5625rem] gap-[1.25rem] text-[0.875rem] font-semibold leading-[170%]"
         :to="{
           name: 'project-projectName',
           params: { projectName: next.name },
@@ -156,15 +156,15 @@ watchEffect(() => {
       </NuxtLink>
     </div>
 
-    <div class="others flex flex-col">
+    <div class="others flex flex-col items-center">
       <h2 class="h1">
         {{ $t('projectH22') }}
       </h2>
 
-      <div class="cards">
+      <div class="cards grid grid-cols-3 gap-[2rem]">
         <div v-for="(p, i) in others" :key="i" class="card card-back rounded-[1rem] relative">
           <NuxtLink
-            class="flex flex-col cursor-help"
+            class="flex flex-col gap-[2rem] cursor-help"
             :title="$t('worksDetails') + ' «' + p.title + '»'"
             :to="{
               name: 'project-projectName',
@@ -186,7 +186,7 @@ watchEffect(() => {
               :three="true"
             />
 
-            <div class="other-text flex flex flex-col items-center justify-between text-center">
+            <div class="other-text flex flex flex-col items-center justify-between gap-[1rem] text-center">
               <h4 class="h4">
                 <em>
                   {{ p.title }}
@@ -207,7 +207,7 @@ watchEffect(() => {
 <style lang="scss">
 .project-page {
   .preview {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1;
     border-radius: 2rem;
 
     &:not(.bg-white) {
@@ -227,17 +227,10 @@ watchEffect(() => {
 
   .project-details {
     margin-top: 7.5rem;
-    align-items: center;
-  }
-
-  .text {
-    width: 65%;
-    gap: 1.875rem;
   }
 
   .h3 {
     margin-top: 4rem;
-    font-size: 2rem;
   }
 
   .source:not(:hover),
@@ -252,18 +245,6 @@ watchEffect(() => {
 
   .navigation {
     margin-top: 9rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-button {
-    display: flex;
-    justify-content: center;
-    height: 1.5625rem;
-    gap: 1.25rem;
-    line-height: 170%;
-    font-size: 0.875rem;
-    font-weight: 600;
   }
 
   .prev svg {
@@ -277,14 +258,10 @@ watchEffect(() => {
 
   .others {
     margin-top: 12rem;
-    align-items: center;
   }
 
   .cards {
     margin-top: 5rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
     margin-bottom: 3.125rem;
   }
 
@@ -294,7 +271,6 @@ watchEffect(() => {
 
   .card a {
     aspect-ratio: 3 / 5;
-    gap: 2rem;
   }
 
   .other {
@@ -309,7 +285,6 @@ watchEffect(() => {
 
   .other-text {
     padding: 1rem;
-    gap: 1rem;
   }
 }
 </style>

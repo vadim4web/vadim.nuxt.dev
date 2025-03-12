@@ -8,7 +8,6 @@
       </span>
 
       <InteractiveButton
-        :action="$router.goBack"
         :bg="'var(--bg50)'"
         :border-radius="'4.25rem'"
         class="font-variant go-back"

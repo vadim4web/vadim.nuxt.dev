@@ -2,7 +2,7 @@
 
 <template>
   <main class="home">
-    <section class="head w-full content flex flex flex-col items-center justify-center text-center">
+    <section class="head w-full gap-[6rem] flex flex flex-col items-center justify-center text-center">
       <div class="h1">
         <h2
           class="h1_h2"
@@ -40,8 +40,8 @@
       </InteractiveButton>
     </section>
 
-    <section class="hero w-full">
-      <div class="left content flex flex flex-col items-center justify-center w-full relative">
+    <section class="hero grid grid-cols-[4fr_3fr] gap-[6rem] items-center w-full">
+      <div class="left gap-[6rem] flex flex flex-col items-center justify-center w-full relative">
         <div class="text flex flex-col">
           <h2 class="h2">
             <TextHighlight />
@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <section class="projects flex flex flex-col items-center justify-center">
+    <section class="projects flex flex flex-col items-center justify-center gap-[2rem]">
       <h2 class="h2 text-center">
         {{ $t('homeH22') }}
         <TextHighlight />
@@ -113,15 +113,7 @@
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 4fr 3fr;
-  gap: 6rem;
-  align-items: center;
-
   .left {
-    align-items: flex-start;
-    justify-content: flex-start;
-
     .h2 .text-highlight {
       top: -7.5rem;
       left: -15rem;
@@ -179,13 +171,8 @@
   }
 }
 
-.content {
-  gap: 6rem;
-}
-
 .projects {
   padding: 3rem 0;
-  gap: 2rem;
 
   .h2 .text-highlight {
     top: -10rem;

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <footer class="footer flex flex-col items-center justify-end relative">
+  <footer class="footer flex flex-col items-center justify-end relative w-[100dvw]">
     <h5 class="h4 top text-center">
       <NuxtLink
         class="link not-to-show-active"
@@ -26,10 +26,10 @@
       </NuxtLink>
     </h5>
 
-    <div class="grid info w-full">
-      <app-logo font-weight="normal" />
+    <div class="grid info w-full h-[8rem]">
+      <AppLogo font-weight="normal" />
 
-      <address class="text-center">
+      <address class="text-center justify-center justify-self-center">
         <h5 class="h4" :title="$t('location')">
           {{ $t('footerA1') }}, 175/14,<br />
           {{ $t('footerA2') }},<br />
@@ -37,7 +37,7 @@
         </h5>
       </address>
 
-      <div class="contacts">
+      <div class="contacts text-right justify-self-end">
         <h5 class="h4 phone">
           <NuxtLink to="tel:+380933789883" target="_self" :title="$t('callMe')">
             +380-933-789-883
@@ -161,7 +161,6 @@
 <style lang="scss" scoped>
 .footer {
   left: -10dvw;
-  width: 100dvw;
   padding: 0 10dvw;
   background: var(--bg2);
 
@@ -190,23 +189,7 @@
 
   .grid {
     grid-template-columns: 22vw 36vw calc(22vw + 0.25rem);
-    height: 8rem;
     padding-bottom: 2.5rem;
-
-    .logo-span {
-      align-self: start;
-      justify-self: start;
-    }
-
-    address {
-      justify-self: center;
-      justify-content: center;
-    }
-
-    .contacts {
-      text-align: right;
-      justify-self: end;
-    }
   }
 }
 

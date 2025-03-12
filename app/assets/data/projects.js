@@ -44,17 +44,17 @@ const vertical = [
     ],
   },
   {
-    title: 'Random User Generator',
-    name: 'random-user-vue',
-    stack: ['vue', 'html', 'css', 'js'],
-    tags: ['UX', 'Fetch', 'Vue3'],
-    desc_en:
+    'title': 'Random User Generator',
+    'name': 'random-user-vue',
+    'stack': ['vue', 'html', 'css', 'js'],
+    'tags': ['UX', 'Fetch', 'Vue3'],
+    'desc_en':
       'A Vue.js app that fetches and displays random user profiles using the RandomUser.me API. It provides an interactive way to explore dynamically generated user data.',
-    desc_uk:
+    'desc_uk':
       'Vue.js-додаток, що отримує та відображає випадкові профілі користувачів за допомогою API RandomUser.me. Інтерактивний спосіб дослідження згенерованих даних.',
-    path: 'random-user-vue',
-    orientation: '|',
-    deps: ['vue ^3.0.0', 'axios ^0.27.0'],
+    'path': 'random-user-vue',
+    'orientation': '|',
+    'deps': ['vue ^3.0.0', 'axios ^0.27.0'],
     'bg-white': true,
   },
   {
@@ -93,17 +93,17 @@ const vertical = [
     deps: ['core-js ^3.8.3', 'vue ^3.2.13'],
   },
   {
-    title: 'Watch widget SCSS',
-    name: 'glowing-watch',
-    stack: ['html', 'scss', 'js'],
-    tags: ['Widget', 'FE', 'Time'],
-    desc_en:
+    'title': 'Watch widget SCSS',
+    'name': 'glowing-watch',
+    'stack': ['html', 'scss', 'js'],
+    'tags': ['Widget', 'FE', 'Time'],
+    'desc_en':
       'This is a straightforward watch widget enhanced by the SASS preprocessor.\n\nThe widget is designed to synchronize with worldwide time using JavaScript, passing this time as a data attribute through the layout to CSS.\n\nThe second-hand animation mimics the behavior of an old mechanical clock, providing a nostalgic touch to the design.',
-    desc_uk:
+    'desc_uk':
       'This is a simple watch widget enhanced with the SASS preprocessor.\n\nThe widget is built to synchronize with global time using JavaScript, passing this time as a data attribute through the layout to CSS.\n\nThe second-hand animation mimics the movement of an old mechanical clock, adding a nostalgic feel to the design.',
-    path: 'glowing-watch',
-    orientation: '|',
-    deps: [
+    'path': 'glowing-watch',
+    'orientation': '|',
+    'deps': [
       '@linthtml/linthtml ^0.8.3',
       'colors ^1.3.3',
       'eslint ^5.16.0',
@@ -249,17 +249,17 @@ const vertical = [
     deps: ['axios', 'vue', 'vue-router'],
   },
   {
-    title: 'Browser Python Interpreter',
-    name: 'python-browser',
-    stack: ['python', 'html', 'css', 'js'],
-    tags: ['Pyodide', 'FE', 'WebAssembly'],
-    desc_en:
+    'title': 'Browser Python Interpreter',
+    'name': 'python-browser',
+    'stack': ['python', 'html', 'css', 'js'],
+    'tags': ['Pyodide', 'FE', 'WebAssembly'],
+    'desc_en':
       'A web-based Python interpreter powered by Pyodide. Run Python code directly in your browser, install packages, and explore Pyodide’s capabilities.',
-    desc_uk:
+    'desc_uk':
       'Веб-інтерпретатор Python на основі Pyodide. Запускайте Python-код прямо у браузері, встановлюйте пакети та досліджуйте можливості Pyodide.',
-    path: 'python',
-    orientation: '|',
-    deps: ['pyodide ^0.24.0', 'codemirror ^5.65.14'],
+    'path': 'python',
+    'orientation': '|',
+    'deps': ['pyodide ^0.24.0', 'codemirror ^5.65.14'],
     'bg-white': true,
   },
   {
@@ -343,17 +343,17 @@ const horizontal = [
     deps: [],
   },
   {
-    title: 'Wordle UA 7500+ words',
-    name: 'wordle-js',
-    stack: ['html', 'css', 'js'],
-    tags: ['Game', 'JS', 'Wordle'],
-    desc_en:
+    'title': 'Wordle UA 7500+ words',
+    'name': 'wordle-js',
+    'stack': ['html', 'css', 'js'],
+    'tags': ['Game', 'JS', 'Wordle'],
+    'desc_en':
       'Embark on a linguistic adventure with the WORDLE Game Project, a captivating web-based word-guessing game where players unravel the mysteries of a hidden word. This version features a Ukrainian dictionary containing over 7500+ 5-lettered words.\n\nHere’s how to enjoy the game:\n1. Launch the app in your web browser to start playing WORDLE.\n2. Input your letter guesses in the designated fields for each round.\n3. Click the \'CHECK\' button to validate your guess against the concealed word.\n4. Correctly guessed letters turn green, while misplaced letters appear in yellow, and incorrect ones remain in grey.\n5. Keep guessing until you either decipher the word or exhaust your attempts.\n6. Upon successful guessing, a victory message appears; if attempts run out, the game concludes.\n7. Reset the game at any time by clicking the \'RESET\' button.\n8. For added hints, check the browser console for clues about the first letter of the hidden word.\n9. Enjoy the game and enhance your word-guessing skills!',
-    desc_uk:
+    'desc_uk':
       'Вирушайте в лінгвістичну подорож з проектом WORDLE Game, захоплюючою веб-грою на відгадування слів, де гравці розгадують таємниці прихованого слова. Ця версія містить український словник з понад 7500+ п’ятибуквених слів.\n\nОсь як насолоджуватися грою:\n1. Запустіть додаток у вашому веб-браузері, щоб почати гру в WORDLE.\n2. Введіть свої припущення щодо літер у відповідні поля для кожного раунду.\n3. Натисніть кнопку «CHECK», щоб перевірити своє припущення щодо прихованого слова.\n4. Правильно вгадані літери стають зеленими, помилково розташовані — жовтими, а неправильні — сірими.\n5. Продовжуйте відгадувати, поки не розгадаєте слово або не витратите всі спроби.\n6. Після успішного вгадування з’являється повідомлення про перемогу; якщо спроби вичерпано, гра завершується.\n7. Скиньте гру в будь-який час, натиснувши кнопку «RESET».\n8. Для додаткових підказок перевірте консоль браузера для підказок про першу літеру прихованого слова.\n9. Насолоджуйтеся грою та вдосконалюйте свої навички відгадування слів!',
-    path: 'wordle-js',
-    orientation: '-',
-    deps: [],
+    'path': 'wordle-js',
+    'orientation': '-',
+    'deps': [],
     'bg-white': true,
   },
   {
@@ -370,31 +370,31 @@ const horizontal = [
     deps: [],
   },
   {
-    title: 'Vue router travel app',
-    name: 'travel-app-vue',
-    stack: ['vue', 'js', 'router'],
-    tags: ['Vue', 'Router', 'SPA'],
-    desc_en:
+    'title': 'Vue router travel app',
+    'name': 'travel-app-vue',
+    'stack': ['vue', 'js', 'router'],
+    'tags': ['Vue', 'Router', 'SPA'],
+    'desc_en':
       'This is implementation of course from:\nhttps://vueschool.io/courses/vue-router-for-everyone.\nUnlock the power of Vue.js Single Page Applications (SPA’s) with the Vue Router. This comprehensive course teaches you the ins and outs of creating dynamic and efficient SPAs, enhancing user experiences through impressive page load speed performance. Whether you’re aiming to build rapid prototypes or full-blown Vue.js SPAs, this course has you covered.\n\nKey-points:\n* Scaffold a new Vue.js project with Vue Router using Vue CLI GUI.\n* Create routes, including named routes, for seamless navigation. Implement lazy loading for optimized resource usage.\n* Work with Vue Router Params and pass them as props to components. Master the creation of dynamic and nested routes.\n* Understand and enable HTML5 History Mode for cleaner URLs.\n* Enhance user experience with impressive route transitions.\n* Handle 404 errors gracefully with custom Vue Router pages.\n* Explore navigation guards and create authentication middleware.\n* And much more to elevate your Vue.js skills.\n\nPrerequisites:\nBasic understanding of Vue.js is recommended. If you’re new to Vue.js and components, consider watching "Vue.js Fundamentals" and "Vue.js Components Fundamentals" before diving into this course.',
-    desc_uk:
+    'desc_uk':
       'Це реалізація курсу з:\nhttps://vueschool.io/courses/vue-router-for-everyone.\nРозкрийте потужність односторінкових додатків (SPA) на Vue.js за допомогою Vue Router. Цей всебічний курс навчить вас основам створення динамічних та ефективних SPA, покращуючи досвід користувачів завдяки вражаючій швидкості завантаження сторінок. Незалежно від того, чи хочете ви створити швидкий прототип або повноцінний Vue.js SPA, цей курс вам підійде.\n\nКлючові моменти:\n* Створення нового проекту Vue.js з Vue Router за допомогою Vue CLI GUI.\n* Створення маршрутів, зокрема іменованих, для безперешкодної навігації. Реалізація лінзового завантаження для оптимізації використання ресурсів.\n* Робота з параметрами Vue Router і передача їх як пропсів компонентам. Опанування створення динамічних і вкладених маршрутів.\n* Розуміння і увімкнення HTML5 History Mode для чистих URL-адрес.\n* Покращення досвіду користувача вражаючими переходами між маршрутами.\n* Коректна обробка помилок 404 з користувацькими сторінками Vue Router.\n* Дослідження навігаційних охоронців і створення middleware для аутентифікації.\n* І багато іншого для покращення ваших навичок у Vue.js.\n* Необхідні знання: Рекомендовано базове розуміння Vue.js. Якщо ви новачок у Vue.js та компонентах, радимо перед початком курсу переглянути курси "Основи Vue.js" та "Основи компонентів Vue.js".',
-    path: 'travel-app-vue',
-    orientation: '-',
-    deps: ['core-js ^3.8.3', 'vue ^3.2.13', 'vue-router ^4.0.3'],
+    'path': 'travel-app-vue',
+    'orientation': '-',
+    'deps': ['core-js ^3.8.3', 'vue ^3.2.13', 'vue-router ^4.0.3'],
     'bg-white': true,
   },
   {
-    title: 'Nice gadgets store',
-    name: 'product-catalog',
-    stack: ['js', 'react', 'node'],
-    tags: ['FE', 'BE', 'Node', 'DB'],
-    desc_en:
+    'title': 'Nice gadgets store',
+    'name': 'product-catalog',
+    'stack': ['js', 'react', 'node'],
+    'tags': ['FE', 'BE', 'Node', 'DB'],
+    'desc_en':
       'The Product Catalog is a comprehensive web application designed for users to explore a variety of products. It offers a user-friendly interface with features such as detailed product pages, category management, and a cart for convenient product handling.\n\nKey features include product details, adaptive design, favorites, cart management, and API integration for real-time data.\nTechnologies used include Node.js, Express.js, PostgreSQL, Sequelize, HTML/CSS.\n\nAPI endpoints:\nGET /products/phones/?page=number&limit=number&sort=string,\nGET /products/tablets/?page=number&limit=number&sort=string,\nGET /products/accessories/?page=number&limit=number&sort=string,\nGET /products/:productId,\nGET /products/new/?limit=number,\nGET /products/discount/?limit=number,\nGET /products/:productId/recommended,\nGET /products/amount.\n\nAPI parameters:\npage=1 (default), limit=16 (default), sort=name (default), available: newest, oldest, price-lowest.',
-    desc_uk:
+    'desc_uk':
       'Каталог продуктів — це комплексний веб-застосунок, розроблений для користувачів, щоб вони могли досліджувати різноманітні продукти. Він пропонує зручний інтерфейс із такими функціями, як детальні сторінки продуктів, керування категоріями та кошик для зручного управління продуктами.\n\nОсновні функції включають деталі продуктів, адаптивний дизайн, улюблені товари, керування кошиком та інтеграцію з API для отримання даних у реальному часі.\nВикористані технології: Node.js, Express.js, PostgreSQL, Sequelize, HTML/CSS.\n\nAPI-ендпоінти:\nGET /products/phones/?page=number&limit=number&sort=string\nGET /products/tablets/?page=number&limit=number&sort=string\nGET /products/accessories/?page=number&limit=number&sort=string\nGET /products/:productId\nGET /products/new/?limit=number\nGET /products/discount/?limit=number\nGET /products/:productId/recommended\nGET /products/amount\n\nПараметри API:\npage=1 (за замовчуванням), limit=16 (за замовчуванням), sort=name (за замовчуванням), available: newest, oldest, price-lowest.',
-    path: 'https://fe-jan23-team-six.github.io/product-catalog/',
-    orientation: '-',
-    deps: [
+    'path': 'https://fe-jan23-team-six.github.io/product-catalog/',
+    'orientation': '-',
+    'deps': [
       '@tanstack/react-query ^4.29.7',
       '@types/classnames ^2.3.1',
       '@types/jest ^27.5.2',
@@ -589,15 +589,15 @@ const horizontal = [
     deps: ['@vueuse/core', 'vue', 'vue-i18n', 'vue-router'],
   },
   {
-    title: 'WebSocket Chat',
-    name: 'chat-app',
-    stack: ['nodejs', 'express', 'websocket'],
-    tags: ['Node.js', 'Chat', 'WS'],
-    desc_en: 'A simple real-time WebSocket chat application built with Node.js and Express. This project demonstrates the use of WebSockets for instant message exchange without requiring a page reload.\n\nKey features:\n\n- Real-time communication – instant message delivery\n- Lightweight – minimal dependencies\n- Express backend – efficient and easy-to-deploy\n- CORS support – allows flexible API integration\n\nThis is a minimal yet functional WebSocket chat app for learning and experimentation.',
-    desc_uk: 'Простий real-time чат на WebSocket, створений за допомогою Node.js і Express. Цей проект демонструє, як використовувати WebSockets для миттєвого обміну повідомленнями без перезавантаження сторінки.\n\nОсновні можливості:\n\n- Реальний час – миттєва доставка повідомлень\n- Легка вага – мінімум залежностей\n- Backend на Express – ефективний і простий у розгортанні\n- Підтримка CORS – можливість інтеграції API\n\nЦей чат є мінімалістичним, але функціональним, ідеально підходить для навчання та експериментів.',
-    path: 'https://chat-app-2acm.onrender.com/',
-    orientation: '-',
-    deps: [
+    'title': 'WebSocket Chat',
+    'name': 'chat-app',
+    'stack': ['nodejs', 'express', 'websocket'],
+    'tags': ['Node.js', 'Chat', 'WS'],
+    'desc_en': 'A simple real-time WebSocket chat application built with Node.js and Express. This project demonstrates the use of WebSockets for instant message exchange without requiring a page reload.\n\nKey features:\n\n- Real-time communication – instant message delivery\n- Lightweight – minimal dependencies\n- Express backend – efficient and easy-to-deploy\n- CORS support – allows flexible API integration\n\nThis is a minimal yet functional WebSocket chat app for learning and experimentation.',
+    'desc_uk': 'Простий real-time чат на WebSocket, створений за допомогою Node.js і Express. Цей проект демонструє, як використовувати WebSockets для миттєвого обміну повідомленнями без перезавантаження сторінки.\n\nОсновні можливості:\n\n- Реальний час – миттєва доставка повідомлень\n- Легка вага – мінімум залежностей\n- Backend на Express – ефективний і простий у розгортанні\n- Підтримка CORS – можливість інтеграції API\n\nЦей чат є мінімалістичним, але функціональним, ідеально підходить для навчання та експериментів.',
+    'path': 'https://chat-app-2acm.onrender.com/',
+    'orientation': '-',
+    'deps': [
       'cors ^2.8.5',
       'express ^4.21.2',
       'ws ^8.18.0',

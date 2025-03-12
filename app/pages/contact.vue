@@ -51,7 +51,7 @@ const submitForm = async () => {
     <PageHeader head-key="contactH21" text-key="contactT1" />
 
     <div class="flex flex-col">
-      <div class="grid-text-form">
+      <div class="grid-text-form grid grid-cols-2">
         <h2 class="h2">
           {{ $t('contactH221') }}<br>
           {{ $t('contactH222') }}<br>
@@ -59,7 +59,7 @@ const submitForm = async () => {
         </h2>
 
         <form @submit.prevent="submitForm">
-          <div class="form flex flex-col card-back relative">
+          <div class="form flex flex-col gap-[3.5rem] rounded-[1.75rem] text-[1.75rem] card-back relative">
             <label class="relative" :data-text="$t('name')">
               <input
                 v-model="name"
@@ -111,7 +111,7 @@ const submitForm = async () => {
 
     <div class="laptop w-full rounded-[1rem]" />
 
-    <div class="address w-full">
+    <div class="address w-full grid grid-cols-3">
       <h4 class="h4">
         <a class="link" href="tel:+380933789883" :title="$t('callMe')">
           +380-933-789-883
@@ -142,17 +142,11 @@ const submitForm = async () => {
 
 <style lang="scss" scoped>
 .grid-text-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0rem;
   padding: 9.5rem 0 7.25rem 0;
 }
 
 .form {
-  gap: 3.5rem;
   padding: 3rem 1.5rem 1.5rem;
-  border-radius: 1.75rem;
-  font-size: 1.5rem;
   color: var(--color0);
 
   label {
@@ -251,8 +245,6 @@ textarea {
 }
 
 .address {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   margin-bottom: 10rem;
 
   & :nth-child(2) {
