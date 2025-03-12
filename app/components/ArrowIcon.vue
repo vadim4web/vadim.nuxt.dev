@@ -2,9 +2,8 @@
   <svg
     aria-label="Arrow Icon"
     aria-hidden="false"
-    fill="none"
     height="13"
-    style="width: 3.125rem; height: 0.8125rem; fill: var(--color0)"
+    class="w-[3.125rem] h-[0.8125rem] fill-current"
     role="img"
     viewBox="0 0 50 13"
     width="50"

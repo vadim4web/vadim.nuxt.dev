@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <header class="header back-blur05">
+  <header class="header back-blur05 fixed">
     <nav>
-      <menu class="w-full relative">
+      <menu class="w-full relative grid">
         <li class="menu-item w-full flex items-center justify-center text-center">
           <NuxtLink class="link flex items-center justify-center w-full logo-link" to="/">
             <app-logo font-weight="bold" />
@@ -45,7 +45,6 @@
 
 <style lang="scss">
 .header {
-  position: fixed;
   z-index: 3;
   top: 0;
   left: 0;
@@ -54,7 +53,6 @@
 }
 
 menu {
-  display: grid;
   grid-template-columns: 3fr repeat(4, 1fr) 3fr;
   place-items: center;
   height: var(--header-h);

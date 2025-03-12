@@ -4,8 +4,7 @@ defineProps({ height: { type: String, required: true } })
 
 <template>
   <strong
-    class="arrow-text"
-    style="font-weight: 700; text-wrap: nowrap"
+    class="arrow-text font-bold text-nowrap"
     :style="{ height, width: parseInt(height) * 1.5 + 'rem' }"
   >
     ->

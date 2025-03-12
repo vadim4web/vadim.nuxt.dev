@@ -1,6 +1,5 @@
 <script setup>
 const { locale, setLocale } = useI18n()
-// const preferredLanguages = usePreferredLanguages()
 
 const showOptions = ref(false)
 const selectedLanguage = ref(locale.value)

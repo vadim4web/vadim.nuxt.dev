@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <footer class="footer items-center flex flex-col relative">
+  <footer class="footer flex flex-col items-center justify-end relative">
     <h5 class="h4 top text-center">
       <NuxtLink
         class="link not-to-show-active"
@@ -44,7 +44,7 @@
           </NuxtLink>
         </h5>
 
-        <div class="links">
+        <div class="links flex items-start justify-end gap-[1.75rem]">
           <h5 class="h4">
             <NuxtLink
               to="https://github.com/vadim4web"
@@ -160,7 +160,6 @@
 
 <style lang="scss" scoped>
 .footer {
-  justify-content: flex-end;
   left: -10dvw;
   width: 100dvw;
   padding: 0 10dvw;
@@ -190,7 +189,6 @@
   }
 
   .grid {
-    display: grid;
     grid-template-columns: 22vw 36vw calc(22vw + 0.25rem);
     height: 8rem;
     padding-bottom: 2.5rem;
@@ -213,10 +211,6 @@
 }
 
 .links {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 1.75rem;
   padding: 1rem 0 0;
 
   .h4 {

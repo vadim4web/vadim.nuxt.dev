@@ -9,11 +9,11 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 </script>
 
 <template>
-  <div class="three three-projects flex items-center justify-center w-full">
+  <div class="three three-projects flex flex-row flex-wrap items-center justify-center w-full h-auto gap-[1rem]">
     <div
       v-for="({ title, name, stack, tags, path, bgWhite }, i) in three"
       :key="i"
-      class="card card-back rounded-[1rem] overflow-hidden"
+      class="card grid gap-[0.75rem] card-back rounded-[1rem] overflow-hidden"
     >
       <div class="frame w-full relative">
         <FrameLoader
@@ -35,7 +35,7 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 
       <h4 class="h4 text-left relative">
         <NuxtLink
-          class="text-wrap overflow-hidden cursor-help"
+          class="text-wrap max-w-full overflow-hidden cursor-help"
           :title="$t('worksDetails') + ' «' + title + '»'"
           :to="{ name: 'project-projectName', params: { projectName: name } }"
         >
@@ -59,21 +59,8 @@ const br = computed(() => (zoom.value === '0.3' ? '3.333rem' : '5.714285rem'))
 </template>
 
 <style lang="scss">
-.text-wrap {
-  max-width: 100%;
-  text-wrap: wrap;
-}
-
 .three-projects {
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 1rem;
-  height: auto;
-
   .card {
-    display: grid;
-    gap: 0.75rem;
-
     @media (orientation: landscape) {
       grid-template-rows: calc(29rem - 2px) 4rem 2.75rem;
       width: calc(29rem - 2px);

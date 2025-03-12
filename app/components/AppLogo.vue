@@ -8,7 +8,7 @@ const strokeWidth = computed(() =>
 
 <template>
   <svg
-    class="logo-svg flex items-center justify-center"
+    class="logo-svg flex items-center justify-center overflow-visible h-[3vmin]"
     viewBox="0 0 500 100"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -30,7 +30,7 @@ const strokeWidth = computed(() =>
       </filter>
     </defs>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="0"
       y="90"
       :style="{ fontWeight }"
@@ -38,7 +38,7 @@ const strokeWidth = computed(() =>
       V
     </text>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="36"
       y="90"
       :style="{ fontWeight }"
@@ -46,7 +46,7 @@ const strokeWidth = computed(() =>
       A
     </text>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="90"
       y="90"
       :style="{ fontWeight }"
@@ -54,7 +54,7 @@ const strokeWidth = computed(() =>
       D
     </text>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="134"
       y="90"
       :style="{ fontWeight }"
@@ -62,7 +62,7 @@ const strokeWidth = computed(() =>
       I
     </text>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="185"
       y="90"
       :style="{ fontWeight }"
@@ -70,7 +70,7 @@ const strokeWidth = computed(() =>
       M
     </text>
     <g
-      class="logo-image"
+      class="logo-image stroke-current"
       transform="translate(243, 0)"
       :style="{ strokeWidth }"
       stroke="currentColor"
@@ -102,7 +102,7 @@ const strokeWidth = computed(() =>
       />
     </g>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="339"
       y="90"
       :style="{ fontWeight }"
@@ -110,7 +110,7 @@ const strokeWidth = computed(() =>
       W
     </text>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="393"
       y="90"
       :style="{ fontWeight }"
@@ -118,7 +118,7 @@ const strokeWidth = computed(() =>
       E
     </text>
     <text
-      class="logo-letter"
+      class="logo-letter flex items-center justify-center text-[100px] fill-current"
       x="443"
       y="90"
       :style="{ fontWeight }"
@@ -127,22 +127,3 @@ const strokeWidth = computed(() =>
     </text>
   </svg>
 </template>
-
-<style lang="scss">
-.logo-svg {
-  height: 3vmin;
-  overflow: visible;
-
-  .logo-letter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
-    fill: var(--color0);
-  }
-
-  .logo-image {
-    stroke: var(--color0);
-  }
-}
-</style>
